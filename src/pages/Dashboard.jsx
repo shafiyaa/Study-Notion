@@ -15,7 +15,7 @@ const Dashboard = () => {
     return (
         <div className='relative flex min-h-[calc(100vh-3.5rem)]'>
 
-            <Sidebar></Sidebar>
+            <Sidebar ></Sidebar>
 
             <div className='h-[calc(100vh-3.5rem)] w-11/12 overflow-auto'>
                 <div >

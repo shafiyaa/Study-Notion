@@ -21,7 +21,7 @@ const MyProfile = () => {
         {/* first section*/}
         <div className='flex justify-between item-center  bg-richblack-800  p-8 px-12  outline outline-1 rounded-md'>
           {/* left */}
-          <div className='flex flex-row items-center gap-x-3'>
+          <div className='flex justify-between flex-row items-center gap-x-3'>
             <img src={user?.image} alt={`profile-${user?.firstName}`} className='aspect-square w-[70px] rounded-full object-cover' />
             <div>
               <p className='text-xl text-white'> {user?.firstName + " " + user?.lastName}</p>

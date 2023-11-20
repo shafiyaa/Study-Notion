@@ -51,22 +51,22 @@ function UpdatePassword(){
                 loading ? (
                     <div className='custom-loader w-full h-full flex items-center justify-center'></div>
                 ) : (
-                    <div className='mx-auto w-[50%] flex flex-col gap-4 text-richblack-100 mt-20' >
+                    <div className='mx-auto sm:w-[50%] w-[80%] flex flex-col gap-4 text-richblack-100 mt-20' >
                         <h1 className='text-3xl text-white'>Choose new Password</h1>
                         <p>Almost Done. Enter your new password and You're all set.</p>
 
-                        <form >
-                            <label className="relative" >
+                        <form className='border border-blue-100  relative' >
+                            <label className=" " >
                                 <p className='mt-3 mb-1 text-richblack-25'>New Password <sup className="text-pink-200">*</sup> </p>
 
                                 <input type={showPassword ? "text" : "password"} required name='password' value={password} placeholder='New Password' onChange={changeHandler}
-                                    className='w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5'
+                                    className='w-full  rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5'
                                     style={{
                                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                                     }} />
                                 <span
                                     onClick={() => setShowPassword((prev) => !prev)}
-                                    className=" absolute  top-[51px] right-6  z-[10] cursor-pointer p-1 "
+                                    className=" absolute   right-5 top-[50px]  z-[10] cursor-pointer p-1 "
                                 >
                                     {
                                         showPassword ? (<AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />) :
@@ -75,16 +75,16 @@ function UpdatePassword(){
                                 </span>
                             </label>
 
-                            <label className="relative" >
+                            <label className="" >
                                 <p className='mt-3 mb-1 text-richblack-25'>Confirm New Password <sup className="text-pink-200">*</sup> </p>
-                                <input type={showConfirmPassword ? "text" : "password"} required  name='confirmPassword' value={confirmPassword} onChange={changeHandler}
+                                <input type={showConfirmPassword ? "text" : "password"} required  placeholder='Confirm password' name='confirmPassword' value={confirmPassword} onChange={changeHandler}
                                     className='w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5'
                                     style={{
                                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                                     }}
                                 />
                                 <span onClick={() => setShowConfirmPassword((prev) => !prev)}
-                                    className='absolute right-5 top-[82px] z-[10] cursor-pointer p-1'>
+                                    className='absolute right-5 top-[136px] z-[10] cursor-pointer p-1'>
                                     {
                                         showConfirmPassword ? (
                                             <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />

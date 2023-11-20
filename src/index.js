@@ -26,7 +26,8 @@ root.render(
   </React.StrictMode>
 );
 
-// login signup otp wale ko responsive krna h aur 
+// sidebar banana h
+// dashboard ko responisve krna h
 // delete all wala button ka controller likhna h- idea - delele all pe api call krne k time usme saare course data send krdenge phir controller me uska use kr k delete kr denge
 
 // logog gayab ho rha h small screeen pe

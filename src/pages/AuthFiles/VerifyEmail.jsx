@@ -45,7 +45,7 @@ const VerifyEmail = () => {
             <div className='custom-loader'></div>
           </div>
         ) : (
-          <div className='text-richblack-100 w-11/12 max-w-maxContent  mx-auto gap-4 min-h-[calc(100vh-3.5rem)] justify-center text-left flex flex-col items-center  border border-pink-100   '>
+          <div className='text-richblack-100 w-11/12 max-w-maxContent  mx-auto gap-4 min-h-[calc(100vh-3.5rem)] justify-center text-left flex flex-col items-center    '>
 
             <div className='max-w-[500px] md:p-6 lg:p-8 p-3  '>
               <h1 className="text-richblack-5 font-semibold  text-[1.875rem] leading-[2.375rem] text-center sm:text-start">Verify Email
