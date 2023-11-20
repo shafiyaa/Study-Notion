@@ -196,7 +196,7 @@ const Navbar = () => {
 
 
 
-        {/* 900 ki custom class banani h usme hi hamburger show krna h */}
+        
         {/* hamburger icon */}
         <div className='text-white text-2xl md:invisible mr-8 absolute right-0 '
           onClick={() => setHamburger(!hamburger)}>

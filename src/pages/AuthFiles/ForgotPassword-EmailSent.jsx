@@ -23,13 +23,13 @@ const ResetPassword = () => {
         loading ? (
           <div className='custom-loader grid place-items-center'></div>
         ) : (
-          <div className='mx-auto w-[50%] flex flex-col gap-4'>
-            <h1 className='text-3xl text-white'>
+          <div className='mx-auto  flex flex-col items-center  gap-4 '>
+            <h1 className='text-3xl text-white '>
               {
                 emailSent ? "Check your Email" : "Reset your Password"
               }
             </h1>
-            <p className='w-[40%]'>
+            <p className='sm:w-[40%] w-[80%] text-center'>
               {
                 emailSent ? `We have sent the reset password email to ${email}` : "We email you instrution to reset your password. If you dont have a access to your email we can try account recovery "
               }
@@ -38,11 +38,11 @@ const ResetPassword = () => {
             <form onSubmit={submitHandler} >
               {
                 !emailSent && (
-                  <label className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5"  >
+                  <label className="mb-1 text-base leading-[1.375rem] text-richblack-5"  >
                     <p className='mt-3 mb-1 text-richblack-25'>Email Address <sup className="text-pink-200">*</sup> </p>
 
                     <input type="email" required name='email' value={email} placeholder='Enter Email Address' onChange={(event) => setEmail(event.target.value)}
-                      className=' w-[50%] rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5'
+                      className=' w-full rounded-[0.5rem] bg-richblack-800 p-[12px] text-richblack-5'
                       style={{
                         boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
                       }} />
