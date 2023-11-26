@@ -68,10 +68,10 @@ const CourseTable = ({ courses, setCourses,}) => {
                 <div
                 // className='custom-loader'
                 ></div></div>): (
-            <div className='text-white'>
-                <Table className="rounded-xl border border-richblack-800 ">
+            <div className='text-white border border-blue-100'>
+                <Table className="rounded-xl border border-richblack-800 p-2  ">
                     <Thead>
-                        <Tr className="flex justify-between  gap-x-10 rounded-t-md border-b border-b-richblack-600 px-6 py-2 ">
+                        <Tr className="flex justify-between  sm:gap-x-10 gap-x-4 rounded-t-md border-b border-b-richblack-600 sm:px-6 px-2 py-2 ">
 
                             <Th className=" text-sm font-medium uppercase text-richblack-100 w-7/12 text-left">Courses</Th>
 

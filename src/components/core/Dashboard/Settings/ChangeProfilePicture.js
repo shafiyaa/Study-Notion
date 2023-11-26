@@ -59,7 +59,7 @@ const ChangeProfilePicture = () => {
 
     const FileUploadHandler = () => {
 
-        console.log("Inside fileuploader");
+       
        
         try {
             console.log("file is uploading...")
@@ -96,15 +96,15 @@ const ChangeProfilePicture = () => {
             loading ? (<div className='grid place-items-center'>
                 <div className='text-4xl text-white flex items-center justify-center h-[500px]'>Loading...</div>
             </div>): (
-                <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12 text-richblack-5">
+                <div className="flex items-center justify-center md:justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 md:py-6 md:px-10 py-3 px-5 text-richblack-5">
 
-                <div className="flex items-center gap-x-4">
+                <div className="flex sm:flex-row flex-col items-center gap-x-4 p-1">
                     <img src={previewSource || randomImage || user?.image } alt={`profile-${user?.firstName}`}
-                        className="aspect-square w-[78px] rounded-full object-cover" />
+                        className="aspect-square sm:w-[78px] w-[60px] rounded-full object-cover" />
     
                     <div className='space-y-2'>
                         <p>Change Profile Picture</p>
-                        <div className='flex flex-row gap-3'>
+                        <div className='flex  items-center sm:flex-row gap-3'>
                             <input type="file"
                                 ref={fileInputRef}
                                 className='hidden'

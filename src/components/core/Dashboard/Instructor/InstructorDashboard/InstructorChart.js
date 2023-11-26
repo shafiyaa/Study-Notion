@@ -45,7 +45,7 @@ const InstructorChart = ({ courses }) => {
     }
 
     return (
-        <div className="flex flex-1 flex-col gap-y-4 rounded-md bg-richblack-800 p-6">
+        <div className="flex flex-1 flex-col gap-y-4 rounded-md bg-richblack-800 py-6 px-2 sm:px-6 ">
             <p className="text-lg font-bold text-richblack-5">Visualise</p>
 
             <div className='flex gap-x-5 font-semibold'>
@@ -68,7 +68,7 @@ const InstructorChart = ({ courses }) => {
 
             </div>
 
-            <div className='relative mx-auto aspect-square h-full w-full'>
+            <div className=' sm:mx-auto aspect-square h-full  w-full '>
                 <Pie
                     data={currChart === "students" ? chartDataForStudents : chartDataForIncome}
                 ></Pie>

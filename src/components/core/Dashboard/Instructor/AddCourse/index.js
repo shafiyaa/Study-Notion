@@ -4,11 +4,13 @@ import {AiFillThunderbolt} from "react-icons/ai"
 
 const AddCourse = () => {
     return (
-        <div  className='p-8'>
+        <div  className='p-8 ml-8 sm:ml-40 md:ml-12 '>
             <h1 className='text-4xl text-richblack-25'>Add Course</h1>
 
-            <div className='flex justify-around gap-4 items-start'>
-            <div className='w-7/12 mt-10'>
+            <div className='flex lg:flex-row flex-col lg:justify-around lg:gap-4 lg:items-start'>
+ 
+                {/* form */}
+            <div className='lg:w-7/12 sm:w-11/12 w-full mt-10'>
                 <RenderSteps></RenderSteps>
             </div>
 
@@ -30,6 +32,8 @@ const AddCourse = () => {
                    <li>Notes to all enrolled students at once</li>
                 </ul>
             </div>
+
+
             </div>
 
           

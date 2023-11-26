@@ -51,8 +51,8 @@ const UpdatePassword = () => {
             <input type={showOldPassword? "text":"password"}
             name='oldPassword'
             id='oldPassword'
-            placeholder='Enter Current Password'
-            className='form-style'
+           
+            className='form-style '
             {...register("oldPassword", {required:true})} />
 
             {/* icon */}
@@ -78,11 +78,11 @@ const UpdatePassword = () => {
 
           {/* new password */}
           <div className='relative flex flex-col gap-2 lg:w-[48%]'>
-            <label htmlFor="newPassword" className='label-style'>NewPassword</label>
+            <label htmlFor="newPassword" className='label-style'>New Password</label>
             <input type={showNewPassword? "text":"password"}
             name='newPassword'
             id='newPassword'
-            placeholder='Enter New Password'
+           
             className='form-style'
             {...register("newPassword", {required:true})} />
 
@@ -111,7 +111,7 @@ const UpdatePassword = () => {
           </div>
 
            {/* button */}
-        <div className='flex justify-end gap-5 '>
+        <div className='flex justify-center sm:justify-end gap-5  '>
          
             <IconButton type={"submit"} text={"Update"} customClass={"bg-blue-100 text-richblack-900 rounded-md py-2 px-4 font-semibold"} ></IconButton>
            

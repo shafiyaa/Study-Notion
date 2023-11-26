@@ -18,9 +18,9 @@ const Dashboard = () => {
             <Sidebar ></Sidebar>
 
             <div className='h-[calc(100vh-3.5rem)] w-11/12 overflow-auto'>
-                <div >
+                <div  >
                     <Outlet></Outlet>
-                    <div className='h-[200px]'></div>
+                    <div className='h-[100px]'></div>
                 </div>
 
             </div>

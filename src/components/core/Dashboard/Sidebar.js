@@ -94,14 +94,14 @@ const Sidebar = () => {
 
 
             {/* small screen side bar */}
-            <div className='  md:invisible text-2xl text-white ml-5  '>
+            <div className='  md:invisible text-2xl mt-4 text-white ml-5  '>
               
                 <BsThreeDotsVertical onClick={ ()=> setSideBar(!sidebar)}/>
             </div> 
 
             {
                 sidebar &&  <div className='absolute top-0'>
-                    <ResponsiveSidebar setSideBar={setSideBar}/>
+                    <ResponsiveSidebar setSideBar={setSideBar} />
                     
                 </div>
             }
