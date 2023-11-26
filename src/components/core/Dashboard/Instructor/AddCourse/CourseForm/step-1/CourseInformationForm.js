@@ -184,7 +184,7 @@ const CourseInformationForm = () => {
 
           (
             <div>
-              <form onSubmit={handleSubmit(submitHandler)} className='rounded-md border-richblack-700 bg-richblack-800 p-6 space-y-8'>
+              <form onSubmit={handleSubmit(submitHandler)} className='rounded-md border-richblack-700 bg-richblack-800 sm:p-6 p-2 space-y-8'>
 
                 {/* course title */}
                 <div>

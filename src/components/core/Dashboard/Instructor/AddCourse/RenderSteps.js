@@ -33,7 +33,7 @@ const RenderSteps = () => {
       <div>
 
         {/* numbers */}
-        <div className='relative mb-2 flex w-full justify-center'>
+        <div className='relative mb-2 sm:flex w-full justify-center hidden '>
           {
             steps.map((item) => (
 
@@ -78,7 +78,7 @@ const RenderSteps = () => {
 
 
 
-        <div className='relative mb-16 flex w-full select-none justify-between '>
+        <div className='relative mb-16 sm:flex w-full select-none justify-between hidden '>
           {
             steps.map((item) => (
              <>

@@ -71,22 +71,22 @@ const PublishCourse = () => {
         </div>) : (
 
           // step 3 ka code
-          <div className='bg-richblack-800 border border-richblack-600 rounded-md py-3 px-5 flex flex-col gap-y-4'>
+          <div className='bg-richblack-800 border border-richblack-600 rounded-md py-3 sm:px-5 px-3 flex flex-col gap-y-4'>
             <p className='text-3xl text-richblack-5'>Publish Course</p>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className='flex items-center gap-3 my-6 mb-8'>
                 <input type="checkbox" id='public' className='border-gray-300 h-4 w-4 rounded bg-richblack-500 text-richblack-400 focus:ring-1 focus:ring-richblack-5 '
 
                   {...register("public")} />
-                <label htmlFor="public" className='inline-flex items-center text-lg'>Make this Course as Public</label>
+                <label htmlFor="public" className='inline-flex items-center sm:text-lg text-base'>Make this Course as Public</label>
 
               </div>
 
               {/* buttons */}
-              <div className='flex gap-x-6 justify-end mt-4'>
-                <button disabled={loading} type='button' onClick={goBack} className='flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-medium text-richblack-900'>Back</button>
+              <div className='flex sm:gap-x-6 sm:justify-end mt-4 gap-x-3 justify-between'>
+                <button disabled={loading} type='button' onClick={goBack} className='flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 sm:py-[8px] sm:px-[20px] py-[4px] px-[10px] font-medium text-richblack-900'>Back</button>
 
-                <button disabled={loading} type='submit' className='bg-yellow-100 py-2 px-4 rounded-md text-richblack-900 font-medium'>Save changes</button>
+                <button disabled={loading} type='submit' className='bg-yellow-100 sm:py-2 sm:px-4 py-1 px-3 rounded-md text-richblack-900 font-medium'>Save changes</button>
               </div>
             </form>
 

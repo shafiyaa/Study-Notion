@@ -193,7 +193,7 @@ const SubSectionModal = ({ modalData, setModalData, add = false, view = false, e
                                         <div className='flex justfy-end'>
                                             <IconButton
                                                 text={edit ? "Save Changes" : "Add New SubSection"}
-                                                customClass="py-2 px-4 text-richblack-800 bg-yellow-100"
+                                                customClass="rounded-md py-2 px-4 text-richblack-800 bg-yellow-100 font-semibold"
                                             ></IconButton>
                                         </div>
                                     )

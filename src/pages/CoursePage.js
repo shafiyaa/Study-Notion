@@ -338,7 +338,7 @@ const CoursePage = () => {
             <div className="md:w-7/12 md:ml-24 w-10/12 mx-auto text-white border-t ">
                 <p className="text-[28px] font-semibold ">Author</p>
                 <div className="flex items-center gap-4 py-4 ">
-                    <img
+                    {/* <img
                         src={
                             coursePageData?.data?.courseDetails?.instructor?.image
                                 ? coursePageData?.data?.courseDetails?.instructor.image
@@ -346,7 +346,7 @@ const CoursePage = () => {
                         }
                         alt="Author"
                         className="h-14 w-14 rounded-full object-cover"
-                    />
+                    /> */}
                     <p className="text-lg">{`${coursePageData?.data?.courseDetails?.instructor.firstName} ${coursePageData?.data?.courseDetails?.instructor.lastName}`}</p>
                 </div>
                 <p className="text-richblack-50">

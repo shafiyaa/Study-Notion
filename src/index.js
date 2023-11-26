@@ -26,8 +26,9 @@ root.render(
   </React.StrictMode>
 );
 
-// sidebar banana h
-// dashboard ko responisve krna h
+
+// instructor ka my course wala responsive krna h
+// catalogue ka last section ka pics sahi krna h
 // delete all wala button ka controller likhna h- idea - delele all pe api call krne k time usme saare course data send krdenge phir controller me uska use kr k delete kr denge
 
 // logog gayab ho rha h small screeen pe

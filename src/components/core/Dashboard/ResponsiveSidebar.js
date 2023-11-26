@@ -4,8 +4,10 @@ import { sidebarLinks } from '../../../data/dashboard-links';
 import { useSelector } from 'react-redux';
 import SidebarOption from './SidebarOption';
 
+
 const ResponsiveSidebar = ({setSideBar}) => {
 const {user} = useSelector( (state)=> state.profile)
+
 
 
 
@@ -17,7 +19,7 @@ const {user} = useSelector( (state)=> state.profile)
 
 
 {/* close button */}
-<div className='flex justify-end '>
+<div className='flex justify-end hover:text-pink-400 '>
   <IoMdClose onClick={()=> setSideBar(false)}  />
   </div>
 
@@ -31,7 +33,7 @@ const {user} = useSelector( (state)=> state.profile)
 
         return(
           <div className='w-full group'>
-            <span className='sm:hidden invisible group-hover:visible absolute z-20 left-20 text-[14px] border '>{link.name}</span>
+            {/* <span className='sm:hidden invisible group-hover:visible w-fit absolute z-20 left-16 text-[14px] py-2 px-3  text-blue-100 border-richblack-600 '>{link.name}</span> */}
             <SidebarOption
             link={link} iconName={link.icon}
             key={link.id}
@@ -44,8 +46,21 @@ const {user} = useSelector( (state)=> state.profile)
     }
   </div>
 
+  {/* line */}
+  <div className='mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-richblack-600'></div>
+
+  {/* setting */}
+   <div>
+    <SidebarOption link={{name:"Settings",
+  path:"/dashboard/settings"}}
+  iconName={"VscSettingsGear"}></SidebarOption>
+   </div>
+
+   
+  
 
 
+                           
     </div>
   )
 }

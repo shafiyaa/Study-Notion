@@ -7,13 +7,13 @@ import UpdatePassword from './UpdatePassword'
 const index = () => {
   return (
     
-   <div>
+   <div className=' ml-10 sm:ml-[10rem] md:ml-8'>
 
     <div>
-    <h1 className="mb-14 text-3xl font-medium text-richblack-5">Edit Profile</h1>
+    <h1 className="mb-14 mt-6 text-3xl font-medium text-richblack-5">Edit Profile</h1>
     </div>
 
-    <div className="w-8/12 mx-auto">
+    <div className="md:w-9/12 sm:w-9/12 w-11/12 sm:mx-auto ">
        
 
         <ChangeProfilePicture></ChangeProfilePicture>

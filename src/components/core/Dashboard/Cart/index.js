@@ -11,7 +11,7 @@ const Cart = () => {
     console.log("total course", totalItems)
     console.log("total price", totalPrice)
   return (
-    <div className='w-11/12 max-w-[1000px] p-4'>
+    <div className='w-11/12 max-w-[1000px] p-4  sm:ml-40 ml-8 md:ml-8 '>
         <h1 className="mb-14 text-3xl font-medium text-richblack-5">Your Cart</h1>
         <p className='text-richblack-100 text-sm border-b pb-4'>{totalItems} Courses in Cart</p>
         {/* <button className='px-4 py-2 border border-pink-200 rounded-md text-white'
@@ -19,7 +19,7 @@ const Cart = () => {
 
         {
             totalItems > 0 ? (
-                <div className='flex items-start justify-start gap-12'>
+                <div className='flex lg:flex-row flex-col items-start justify-start lg:gap-12 gap-4 p-2'>
                     <RenderCartCourse></RenderCartCourse>
 
                     <RenderTotalAmount ></RenderTotalAmount>

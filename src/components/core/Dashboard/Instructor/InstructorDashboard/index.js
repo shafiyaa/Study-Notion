@@ -40,7 +40,8 @@ const Instructor = () => {
 
 
     return (
-        <div className='text-white flex flex-col gap-10 py-10 px-16'>
+        <div className='text-white flex flex-col gap-10 md:py-10 py-6 md:px-16 sm:px-10 px-4
+         sm:ml-[7.5rem] md:ml-1 ml-9 '>
             <div className=' '>
                 <h1 className="text-2xl font-bold text-richblack-5 mb-2">Hi {user?.firstName} {user?.lastName} 👋</h1>
                 <p className="font-medium text-richblack-200">Let's start something new</p>
@@ -52,11 +53,11 @@ const Instructor = () => {
 
                     </div>
                 </div>) : courses.length > 0 ? (
-                    <div className="my-4 flex space-x-4 ">
+                    <div className="sm:my-4 flex md:flex-row md:items-start flex-col items-center gap-y-8 sm:space-x-4 ">
                         {/* if there is student enrolled */}
 
                         {totalAmount > 0 || totalStudents > 0 ? (
-                            <div className='w-9/12'><InstructorChart courses={instructorData}></InstructorChart></div>
+                            <div className='md:w-9/12 sm:w-10/12 w-11/12'><InstructorChart courses={instructorData}></InstructorChart></div>
 
                         ) : (<div className="flex-1 rounded-md bg-richblack-800 p-6">
                             <p className="text-lg font-bold text-richblack-5">Visualize</p>
@@ -68,21 +69,21 @@ const Instructor = () => {
                         }
 
                         {/* data */}
-                        <div className="flex min-w-[250px] flex-col rounded-md bg-richblack-800 p-6">
+                        <div className="flex md:min-w-[200px]  flex-col rounded-md bg-richblack-800 md:py-6 md:px-6 py-8 px-16">
                             <p className="text-lg font-bold text-richblack-5">Statistics</p>
-                            <div className="mt-4 space-y-4">
-                                <p className="text-lg text-richblack-200">Total Courses</p>
-                                <p className="text-3xl font-semibold text-richblack-50">{courses.length}</p>
+                            <div className="my-2 space-y-2">
+                                <p className="lg:text-lg sm:text-[16px] text-[15px] text-richblack-200">Total Courses</p>
+                                <p className="lg:text-3xl sm:text-xl text-lg font-semibold text-richblack-50">{courses.length}</p>
                             </div>
 
-                            <div>
-                                <p className="text-lg text-richblack-200">Total Students</p>
-                                <p className="text-3xl font-semibold text-richblack-50">{totalStudents}</p>
+                            <div className="my-2 space-y-2">
+                                <p className="lg:text-lg sm:text-[16px] text-[15px] text-richblack-200">Total Students</p>
+                                <p className="lg:text-3xl sm:text-xl text-lg font-semibold text-richblack-50">{totalStudents}</p>
                             </div>
 
-                            <div>
-                                <p className="text-lg text-richblack-200">Total Income</p>
-                                <p className="text-3xl font-semibold text-richblack-50">{totalAmount}</p>
+                            <div className="my-2 space-y-2">
+                                <p className="lg:text-lg sm:text-[16px] text-[15px] text-richblack-200">Total Income</p>
+                                <p className="lg:text-3xl sm:text-xl text-lg font-semibold text-richblack-50">{totalAmount}</p>
                             </div>
                         </div>
 
@@ -97,7 +98,7 @@ const Instructor = () => {
 
 {/* course */} 
 
-            <div className='mt-8 border-t border-richblack-600'>
+            <div className='mt-8 border-t border-richblack-600 hidden sm:inline'>
 
             <div className='pt-3'>
                             <p className="text-lg font-bold text-richblack-5">Your Courses</p>
@@ -112,11 +113,11 @@ const Instructor = () => {
                                         <img  className="h-[201px] w-full rounded-md object-cover"
                                             src={course.thumbnail}
                                         />
-                                        <div className="mt-3 w-full">
+                                        <div className="mt-3 w-full flex-col justify-start ">
                                             <p className="text-base font-medium text-richblack-50">{course.courseName}</p>
-                                            <div className="mt-1 flex items-center space-x-2">
+                                            <div className="mt-1 flex md:flex-row flex-col md:items-center md:space-x-2 ">
                                                 <p className="text-xs font-medium text-richblack-300">{course.studentsEnrolled.length} students</p>
-                                                <p className="text-xs font-medium text-richblack-300"> | </p>
+                                                <p className="text-xs font-medium text-richblack-300 hidden md:inline"> | </p>
                                                 <p className="text-xs font-medium text-richblack-300"> Rs {course.price}</p>
                                             </div>
 
