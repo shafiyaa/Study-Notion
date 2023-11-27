@@ -27,7 +27,7 @@ root.render(
 );
 
 
-// instructor ka my course wala responsive krna h
+// instructor ka my course wale ka top part responsive krna h
 // catalogue ka last section ka pics sahi krna h
 // delete all wala button ka controller likhna h- idea - delele all pe api call krne k time usme saare course data send krdenge phir controller me uska use kr k delete kr denge
 
