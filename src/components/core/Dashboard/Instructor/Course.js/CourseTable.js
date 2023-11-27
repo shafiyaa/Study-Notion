@@ -65,23 +65,23 @@ const CourseTable = ({ courses, setCourses,}) => {
     return (
         <>
             loading ? (<div>
-                <div
-                // className='custom-loader'
-                ></div></div>): (
-            <div className='text-white border border-blue-100'>
+                {/* <div
+                className='custom-loader'
+                ></div> */}
+                </div>): (
+            <div className='text-white '>
                 <Table className="rounded-xl border border-richblack-800 p-2  ">
                     <Thead>
-                        <Tr className="flex justify-between  sm:gap-x-10 gap-x-4 rounded-t-md border-b border-b-richblack-600 sm:px-6 px-2 py-2 ">
+                        <Tr className="flex justify-between  sm:gap-x-10 gap-x-4 gap-y-2 sm:gap-y-0 rounded-t-md border-b border-b-richblack-600 sm:px-6 px-2 py-2 ">
 
-                            <Th className=" text-sm font-medium uppercase text-richblack-100 w-7/12 text-left">Courses</Th>
+                            <Th className=" text-sm font-medium uppercase text-richblack-100 sm:w-9/12 text-left  ">Courses</Th>
+
+                            <Th className=" text-sm font-medium uppercase text-richblack-100  " >Duration</Th>
+                            <Th className=" text-sm font-medium uppercase text-richblack-100 ">Price</Th>
+                            <Th className=" text-sm font-medium uppercase text-richblack-100 ">Actions</Th>
 
 
-                            <div className='flex justify-between  w-[25%]'>
-                            <Th className=" text-sm font-medium uppercase text-richblack-100 c" >Duration</Th>
-                            <Th className=" text-sm font-medium uppercase text-richblack-100">Price</Th>
-                            <Th className=" text-sm font-medium uppercase text-richblack-100">Actions</Th>
-
-                            </div>
+                           
                             
                         </Tr>
                     </Thead>
@@ -94,24 +94,24 @@ const CourseTable = ({ courses, setCourses,}) => {
                             ) : (
                                 courses?.map((course) => (
                                     <Tr key={course._id}
-                                        className="flex gap-x-10 border-b border-richblack-800 px-6 py-8">
-                                        <Td className='flex gap-x-4 flex-1 '>
-                                            <img src={course?.thumbnail} alt="thumbnail" className='object-cover h-[148px] w-[220px] rounded-lg ' />
+                                        className="flex lg:gap-x-10 gap-x-5 border-b border-richblack-800 lg:px-6 px-3  py-8 ">
+                                        <Td className='flex gap-x-4 flex-1  sm:w-9/12 w-11/12'>
+                                            <img src={course?.thumbnail} alt="thumbnail" className='object-cover xl:h-[148px] xl:w-[220px] sm:h-[135px] sm:w-[200px] h-[120px] w-[190px] rounded-lg ' />
                                             <div className='flex flex-col justify-between'>
-                                                <p className='text-lg font-medium text-richblack-5'>{course.courseName}</p>
+                                                <p className='lg:text-lg text-base font-medium text-richblack-5 my-1 sm:my-0'>{course.courseName}</p>
 
-                                                <p className='text-xs text-richblack-300'>{course.courseDescription.split(" ").length > TRUNCATE_LENGTH ? course.courseDescription.split(" ").slice(0, TRUNCATE_LENGTH).join(" ") + "..."
+                                                <p className='text-xs text-richblack-300 hidden md:inline'>{course.courseDescription.split(" ").length > TRUNCATE_LENGTH ? course.courseDescription.split(" ").slice(0, TRUNCATE_LENGTH).join(" ") + "..."
                                                     : course.courseDescription
                                                 }</p>
 
 
                                                 <p className='text-xs text-white'>Created: {formatDate(course.createdAt)} </p>
                                                 {
-                                                    course.status === COURSE_STATUS.DRAFT ? (<div className=' flex items-center gap-3 text-pink-500 border bg-richblack-800 rounded-md px-4 w-fit py-2'>
+                                                    course.status === COURSE_STATUS.DRAFT ? (<div className=' flex items-center lg:gap-3 gap-1 text-pink-500 border bg-richblack-800 rounded-md lg:px-3 w-fit lg:py-2  px-2 py-1 lg:text-[18px] text-[14px] my-1 sm:my-0'>
                                                         <AiOutlineClockCircle />
                                                         <p>DRAFTED</p>
 
-                                                    </div>) : (<div className='text-blue-100 flex items-center gap-3 border bg-richblack-800 rounded-md px-4 py-2 w-fit'>
+                                                    </div>) : (<div className='text-blue-100 flex items-center lg:gap-3 gap-1 border bg-richblack-800 rounded-md lg:px-3 lg:py-2 w-fit px-2 py-1 lg:text-[18px] text-[14px] my-1 sm:my-0'>
                                                         <TiTickOutline></TiTickOutline>
                                                         <p>PUBLISHED</p>
                                                     </div>)
@@ -119,11 +119,11 @@ const CourseTable = ({ courses, setCourses,}) => {
                                             </div>
                                         </Td>
                                         
-                                        <Td className="text-sm font-medium text-richblack-100">{timeDuration} 10min</Td>
+                                        <Td className="text-sm font-medium text-richblack-100 my-1 sm:my-0 ">{timeDuration} 10min</Td>
                                         <Td className="text-sm font-medium text-richblack-100">Rs {course?.price}</Td>
 
-                                        <Td className="text-xl text-richblack-100">
-                                            <div className='flex gap-3'>
+                                        <Td className="text-xl text-richblack-100 my-1 sm:my-0 ">
+                                            <div className='flex flex-row lg:gap-3 gap-1'>
                                                 <button disabled={loading}
                                                     onClick={() => navigate(`/dashboard/edit-course/${course._id}`)}
                                                     title='Edit'
