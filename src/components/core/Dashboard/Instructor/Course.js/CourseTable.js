@@ -14,7 +14,7 @@ import { setCourse } from '../../../../../reducers/slices/courseSlice';
 import { deleteCourse } from '../../../../../services/operations/courseAPI';
 import { useNavigate } from 'react-router-dom';
 import { formatDate } from '../../../../../utilis/dateFormatter';
-import timeInSec from "../../../../../utilis/timeInSec"
+// import timeInSec from "../../../../../utilis/timeInSec"
 
 const CourseTable = ({ courses, setCourses,}) => {
 
