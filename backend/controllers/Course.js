@@ -313,7 +313,7 @@ exports.getInstructorCourses = async (req, res) => {
 				path: "subSection",
 			},
 		})
- console.log("instructor courses", instructorCourses)
+//  console.log("instructor courses", instructorCourses)
 
  return res.status(200).json({
 			success: true,
@@ -393,10 +393,52 @@ exports.deleteCourse = async (req, res) => {
 // delete all course
 exports.deleteAllCourse = async(req, res)=>{
 	try{
+		
 		const instructorId = req.user.id
+		console.log("instructorId is ", instructorId)
    
 		const allCourse = await Course.find({
 			instructor: instructorId
+		})
+
+		// iterate the all courses
+
+		for (const course of allCourse){
+			console.log("course is ", course)
+
+			const studentsEnrolled = course.studentsEnrolled
+
+			// delete the student 
+			for (const studentId of studentsEnrolled){
+				await User.findByIdAndDelete(studentId)
+			}
+
+			// delete section
+			const courseSections = course.courseContent
+
+			for (const sectionId of courseSections){
+				const section = await Section.findById(sectionId)
+                    
+				// delete the subSections
+				if(section){
+					const subSections = section.subSection
+
+					for (const subSectionId of subSections){
+						await SubSection.findById(subSectionId)
+					}
+				}
+				await Section.findByIdAndDelete(sectionId)
+
+			}
+
+			// delete the course
+			await Course.findByIdAndDelete(course._id)
+
+		}
+
+		return res.status(200).json({
+			success: true,
+			message: "All Course are deleted"
 		})
 
 		

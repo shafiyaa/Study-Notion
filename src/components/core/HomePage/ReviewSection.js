@@ -67,6 +67,15 @@ const ReviewSection = () => {
                 <div className='flex items-center gap-4'>
                   <p>{review?.rating.toFixed(1)}</p>
                   {/* toFiexed se decimal aata h */}
+                  
+                  <ReactStars
+                   count={5}
+                   value={review.rating}
+                   size={20}
+                   edit={false}
+                   activeColor="#ffd700"
+                   emptyIcon={<FaStar />}
+                   fullIcon={<FaStar />}></ReactStars>
 
 
                 

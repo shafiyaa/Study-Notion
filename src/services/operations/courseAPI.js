@@ -20,6 +20,7 @@ const {
   DELETE_SUBSECTION_API,
   GET_ALL_INSTRUCTOR_COURSES_API,
   DELETE_COURSE_API,
+  DELETE_ALL_COURSE,
   GET_FULL_COURSE_DETAILS_AUTHENTICATED,
   CREATE_RATING_API,
   LECTURE_COMPLETION_API,
@@ -374,6 +375,26 @@ export const deleteCourse = async (data, token) => {
       throw new Error("Could Not Delete Course")
     }
     toast.success("Course Deleted")
+  } catch (error) {
+    console.log("error in delete Course", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+}
+
+export const deleteAllCourse = async(token)=>{
+
+  const toastId = toast.loading("Loading...")
+  try {
+    console.log("delete all course")
+    const response = await apiConnector("DELETE", DELETE_ALL_COURSE, null, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("delete all course response", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Delete Course")
+    }
+    toast.success("All Courses Deleted")
   } catch (error) {
     console.log("error in delete Course", error)
     toast.error(error.message)
