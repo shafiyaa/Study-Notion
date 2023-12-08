@@ -182,15 +182,7 @@ const CoursePage = () => {
                     <p className='flex items-center gap-1'><PiGlobe /> <span>English</span> </p>
                 </div>
 
-                {/* <div>
-
-                    <button onClick={() => trialCourse(token)}
-                        className='border border-blue-100 py-3 px-5'>Try this Course for Free</button>
-
-
-                </div> */}
-
-
+                
                 {/* buynow div */}
 
                 <div className='mt-10 text-white flex flex-col gap-y-2 p-4 rounded-lg bg-richblack-700 lg:absolute lg:top-4 lg:right-[15%] sm:w-[380px] w-[270px] -ml-9 sm:ml-0  '>
@@ -224,9 +216,9 @@ const CoursePage = () => {
 
                     </div>
 
-                    <p className='text-[16px] text-richblack-300'>30 Day Money back Gurantee</p>
+                    {/* <p className='text-[16px] text-richblack-300'>30 Day Money back Gurantee</p> */}
 
-                    <div>
+                    {/* <div>
                         <p className='text-[20px]'>This Course Includes</p>
 
                         <div className='flex flex-col gap-y-2 mb-2'>
@@ -246,7 +238,7 @@ const CoursePage = () => {
 
                             }
                         </div>
-                    </div>
+                    </div> */}
 
                     <button
                         onClick={handleShare}
