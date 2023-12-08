@@ -16,12 +16,12 @@ const cartSlice = createSlice({
    name: "cart",
    initialState: initialState,
    reducers: {
-      
+
       //  HW- add toast to this function
       // add to CART
       addToCart: (state, value) => {
          const course = value.payload
-         const index = state.cart.findIndex((item) => (item._id === course._id)  
+         const index = state.cart.findIndex((item) => (item._id === course._id)
          )
 
          //   (agr course pehle se cart me h toh kuch nhi krna h)
@@ -29,7 +29,7 @@ const cartSlice = createSlice({
          // if there is an error check the code!!
          if (index >= 0) {
             toast.error("Course is already in the Cart")
-            return ;
+            return;
          }
 
          // update the cart after adding the course
@@ -46,32 +46,32 @@ const cartSlice = createSlice({
 
       },
       // remove from Cart
-      removeFromCart: (state,value) =>{
+      removeFromCart: (state, value) => {
          const courseId = value.payload
-         const index = state.cart.findIndex((item)=>(
+         const index = state.cart.findIndex((item) => (
             item._id === courseId
          ))
 
          // course is found in cart
-         if(index >= 0){
-           
+         if (index >= 0) {
+
             state.totalItems--
             state.totalPrice -= state.cart[index].price
-            state.cart.splice(index,1)
+            state.cart.splice(index, 1)
          }
          // update the local Storage
-         localStorage.setItem("cart",JSON.stringify(state.cart))
-         localStorage.setItem("totalPrice",JSON.stringify(state.totalPrice))
-         localStorage.setItem("totalItems",JSON.stringify(state.totalItems))
+         localStorage.setItem("cart", JSON.stringify(state.cart))
+         localStorage.setItem("totalPrice", JSON.stringify(state.totalPrice))
+         localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
 
          toast.success("Course removed from the Cart")
 
       },
       // reset CArt
-      resetCart: (state) =>{
+      resetCart: (state) => {
          console.log("emptying the cart ")
          state.cart = []
-         state.totalItems =0
+         state.totalItems = 0
          state.totalPrice = 0
 
          localStorage.removeItem("cart")
@@ -82,5 +82,5 @@ const cartSlice = createSlice({
    }
 })
 
-export const {addToCart, removeFromCart, resetCart  } = cartSlice.actions
+export const { addToCart, removeFromCart, resetCart } = cartSlice.actions
 export default cartSlice.reducer
