@@ -37,9 +37,9 @@ const RenderSteps = () => {
           {
             steps.map((item) => (
 
-              <>
+              <React.Fragment key={item.id}>
 
-              <div className='flex flex-col items-center ' key={item.id}>
+              <div className='flex flex-col items-center ' >
 
                 <button 
                 className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${
@@ -71,7 +71,7 @@ const RenderSteps = () => {
                   </div>
                   </>
                 )}            
-              </>
+                  </React.Fragment>
              
             ))}
         </div>
@@ -81,7 +81,7 @@ const RenderSteps = () => {
         <div className='relative mb-16 sm:flex w-full select-none justify-between hidden '>
           {
             steps.map((item) => (
-             <>
+          
              <div
              className="flex min-w-[130px] flex-col items-center gap-y-2"
              key={item.id}>
@@ -94,7 +94,7 @@ const RenderSteps = () => {
               </p>
 
              </div>
-             </>
+            
             ))
           }
         </div>

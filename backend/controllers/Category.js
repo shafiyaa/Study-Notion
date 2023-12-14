@@ -16,7 +16,7 @@ exports.createCategory = async (req, res) => {
             name: name,
             description: description,
         });
-        console.log(CategorysDetails);
+       
         return res.status(200).json({
             success: true,
             message: "Categorys Created Successfully",
@@ -69,7 +69,7 @@ exports.categoryPageDetails = async (req, res) => {
             })
             .exec();
 
-        // console.log("selected Category ", selectedCategory)
+       
         // validation
         if (!selectedCategory) {
             console.log("Category not Found")
@@ -79,8 +79,7 @@ exports.categoryPageDetails = async (req, res) => {
             });
         }
 
-        // console.log("seelectdCatefory courses", selectedCategory.courses)
-        // Handler the case when there are no courses of a category
+        
         if (selectedCategory.courses.length === 0) {
             console.log("No courses Found for the selected category")
             return res.status(404).json({
@@ -103,7 +102,7 @@ exports.categoryPageDetails = async (req, res) => {
                 path:"instructor"
             }
         }).exec()
-        //  console.log("Different COURSE", differentCategory)
+        
 
         //get top 10 selling courses
         const allCategories = await Category.find().populate({
@@ -117,7 +116,7 @@ exports.categoryPageDetails = async (req, res) => {
         const allCourses = allCategories.flatMap((category)=> category.courses)
         const mostSellingCourses = allCourses.sort((a,b) => b.sold - a.sold).slice(0,10)
         
-        // console.log("most selling courses: ", mostSellingCourses)
+      
 
 
         return res.status(200).json({

@@ -22,17 +22,14 @@ exports.updateCourseProgress = async(req, res)=>{
             })
         }
 
-        // when we buy the course that time we add course progress- tabhi aage ka code nhi chl rha h  pehle payment wale ko sahi karo
-
+        
         // check old entry
         let courseProgress = await CourseProgress.findOne({
             courseID: courseId,
             userId:userId
         })
 
-        console.log("printing course progresss", courseProgress)
-            console.log("priting completed videos", courseProgress.completedVideos)
-
+       
         if(!courseProgress){
             return res.status(404).json({
                 success:false,
@@ -46,7 +43,7 @@ exports.updateCourseProgress = async(req, res)=>{
           
             // re-completing video/ subsection
             if(courseProgress.completedVideos.includes(subSectionId)){
-                console.log("subsection include h")
+               
                 return res.status(400).json({
                     error:"Subsection already completed",
                 });
@@ -55,7 +52,7 @@ exports.updateCourseProgress = async(req, res)=>{
           
             // push the completed video
             
-            console.log("subsection inclueded nhi h usko courprogress mai include kr rhe hain")
+          
             courseProgress.completedVideos.push(subSectionId);
            
         }

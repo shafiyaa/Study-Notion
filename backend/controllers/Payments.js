@@ -13,10 +13,10 @@ const crypto = require("crypto");
 
 exports.capturePayment = async(req, res) =>{
 
-    console.log("in the capture payment")
+    
     const {courses} = req.body
     const userId = req.user.id
-   console.log("userId is ", userId)
+  
 
     if(courses.length === 0){
         return res.json({
@@ -25,12 +25,12 @@ exports.capturePayment = async(req, res) =>{
         })
     }
    
-    console.log("after checking courses length")
+    
     // find the total amount of all courses
     let totalAmount = 0
 
     for(const course_id of courses){
-        console.log("in the for loop")
+       
         let course
         
         try{
@@ -43,7 +43,7 @@ exports.capturePayment = async(req, res) =>{
             }
 
             const uid = new mongoose.Types.ObjectId(userId)
-            console.log("UID is ",uid)
+            
             // checking the user is already enrolled in the course
             if(course.studentsEnrolled.includes(uid)){
                 return res.status(200).json({
@@ -53,8 +53,7 @@ exports.capturePayment = async(req, res) =>{
             }
 
             totalAmount += course.price
-            console.log("total amount is ", totalAmount)
-
+          
         }catch(error){
             console.log("error while calculate the total amount")
             console.log(error)
@@ -179,7 +178,7 @@ exports.sendPaymentSuccessEmail = async(req, res) =>{
 // function to enroll Student in the buyed course
 const enrollStudents = async(courses, userId, res)=>
 {
-console.log("in the enrollStudent")
+
 
     if(!courses || !userId){
         return res.status(400).json({
@@ -240,7 +239,7 @@ console.log("in the enrollStudent")
                     `)
                 )
 
-                console.log("Email Sent Successfully", emailResponse.response);
+               
 
         }catch(error){
             console.log("error in enroll students function")

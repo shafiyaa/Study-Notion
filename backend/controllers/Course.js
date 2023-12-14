@@ -74,7 +74,7 @@ exports.createCourse = async (req, res) => {
 			thumbnail,
 			process.env.FOLDER_NAME
 		);
-		// console.log(thumbnailImage);
+		
 
 		// Create a new course with the given details
 		const newCourse = await Course.create({
@@ -313,7 +313,7 @@ exports.getInstructorCourses = async (req, res) => {
 				path: "subSection",
 			},
 		})
-//  console.log("instructor courses", instructorCourses)
+
 
  return res.status(200).json({
 			success: true,
@@ -395,8 +395,7 @@ exports.deleteAllCourse = async(req, res)=>{
 	try{
 		
 		const instructorId = req.user.id
-		console.log("instructorId is ", instructorId)
-   
+		
 		const allCourse = await Course.find({
 			instructor: instructorId
 		})
@@ -404,7 +403,7 @@ exports.deleteAllCourse = async(req, res)=>{
 		// iterate the all courses
 
 		for (const course of allCourse){
-			console.log("course is ", course)
+			
 
 			const studentsEnrolled = course.studentsEnrolled
 
@@ -486,9 +485,7 @@ exports.getFullCourseDetails = async (req, res) => {
 			courseID: courseId,
 			userId: userId
 		})
- console.log("priting in the getFullCourseDetails in Course Controller")
-		console.log("courseProgressCount: ", courseProgressCount)
-
+        
 		if(!courseDetails){
 			return res.status(400).json({
 				success:false,

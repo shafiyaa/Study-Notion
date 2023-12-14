@@ -118,18 +118,7 @@ const CoursePage = () => {
         )
     }
 
-    // const trialCourse = async (token) => {
-    //     if (!token) {
-    //         toast.error("If you want to try this course, you have to login first!")
-    //     } else {
-    //         navigate(`/course-trial-page/${coursePageData?.data?._id}`)
-    //     }
-    // }
-
-
-
-
-
+    
 
     if (loading) {
 
@@ -147,7 +136,7 @@ const CoursePage = () => {
         <div className=' flex flex-col gap-10 items-start lg:relative'>
             {/* top div */}
             <div className='text-white w-full bg-richblack-800 py-20 px-20 flex flex-col gap-y-2  '>
-                <p className='text-3xl'>{coursePageData?.data?.courseDetails?.courseName}</p>
+                <p className='text-3xl lg:max-w-[430px]  '>{coursePageData?.data?.courseDetails?.courseName}</p>
                 <p className=' text-richblack-200 my-2 sm:w-5/12 w-10/12'>{coursePageData?.data?.courseDetails?.courseDescription}</p>
 
 
@@ -185,7 +174,7 @@ const CoursePage = () => {
                 
                 {/* buynow div */}
 
-                <div className='mt-10 text-white flex flex-col gap-y-2 p-4 rounded-lg bg-richblack-700 lg:absolute lg:top-4 lg:right-[15%] sm:w-[380px] w-[270px] -ml-9 sm:ml-0  '>
+                <div className='mt-10 text-white flex flex-col gap-y-2 p-4 rounded-lg bg-richblack-700 lg:absolute lg:top-4 lg:right-[10%] sm:w-[380px] w-[270px] -ml-9 sm:ml-0  '>
                     <img src={coursePageData?.data?.courseDetails?.thumbnail} alt="thumbnail" className='rounded-lg  min-h-[200px] max-h-[300px] max-w-[400px]' />
                     <p className='text-xl'>Rs.{coursePageData?.data?.courseDetails?.price}</p>
 
@@ -201,7 +190,7 @@ const CoursePage = () => {
                                 user && coursePageData?.data?.courseDetails?.studentsEnrolled.includes(user?._id) ? "Go to Course" : "Buy Now"
                             }
                         </button>
-
+       
 
                         {
                             !coursePageData?.data?.courseDetails?.studentsEnrolled.includes(user?._id) && (
@@ -313,14 +302,6 @@ const CoursePage = () => {
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
 
 
 

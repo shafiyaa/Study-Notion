@@ -8,12 +8,10 @@ const { convertSecondsToDuration } = require("../utils/secToDuration")
 // Method for updating a profile
 exports.updateProfile = async (req, res) => {
 	try {
-		console.log("in the backend")
+		
 		const { dateOfBirth = "", about = "", contactNumber, gender } = req.body;
 
-		console.log("printing req body", req.body)
-		console.log("printing req user", req.user)
-		console.log("printing id: ", req.user.id)
+		
 		const id = req.user.id;
 
 		// Find the profile by id
@@ -28,10 +26,10 @@ exports.updateProfile = async (req, res) => {
 		// Save the updated profile
 		await profile.save();
 		const updatedUserDetails = await User.findById(id).populate("additionalDetails").exec();
-		console.log("I am updatedUserDetails : ", updatedUserDetails)
+		
 
 
-		console.log("I am profile : ", profile);
+		
 
 		return res.json({
 			success: true,
@@ -51,14 +49,10 @@ exports.updateProfile = async (req, res) => {
 
 exports.deleteAccount = async (req, res) => {
 	try {
-		// TODO: Find More on Job Schedule
-		// const job = schedule.scheduleJob("10 * * * * *", function () {
-		// 	console.log("The answer to life, the universe, and everything!");
-		// });
-		// console.log(job);
-		console.log("Printing ID: ", req.user.id);
+		
+	
 		const id = req.user.id;
-		// const id = req.body.id
+	
 
 		const user = await User.findById({ _id: id });
 		if (!user) {
@@ -69,7 +63,7 @@ exports.deleteAccount = async (req, res) => {
 		}
 		// Delete Assosiated Profile with the User
 		await Profile.findByIdAndDelete({ _id: user.additionalDetails });
-		// TODO: Unenroll User From All the Enrolled Courses
+		
 		// Now Delete User
 		await User.findByIdAndDelete({ _id: id });
 		res.status(200).json({
@@ -108,7 +102,7 @@ exports.updateDisplayPicture = async (req, res) => {
 	try {
 		console.log("frist")
 		const displayPicture = req.files.displayPicture
-		console.log("displayPicture", displayPicture)
+		
 
 		const userId = req.user.id
 
@@ -141,7 +135,7 @@ exports.updateDisplayPicture = async (req, res) => {
 exports.getEnrolledCourses = async (req, res) => {
 	
 	try {
-		console.log("in the enrolled Courses")
+		
 
 		const userId = req.user.id
 		const userDetails = await User.findOne({
@@ -159,15 +153,13 @@ exports.getEnrolledCourses = async (req, res) => {
 
 		
 
-console.log("before to Obejct")
-		// userDetails = userDetails.toObject()
+
 
 		// calculate duration
 		var SubsectionLength = 0
 		for (var i = 0; i < userDetails.courses.length; i++) {
 			 
-			// console.log("calculate duration")
-
+			
 			let totalDurationInSeconds = 0
 			SubsectionLength = 0
 
@@ -182,7 +174,7 @@ console.log("before to Obejct")
 			}
 
 			
-			// console.log("calculte progress")
+			
 			let courseProgressCount = await CourseProgress.findOne({
 				courseID: userDetails.courses[i]._id,
 				userId:userId,
@@ -201,7 +193,7 @@ console.log("before to Obejct")
 
 	
  
-console.log("after time duration and progress count")
+
 
 		if (!userDetails) {
 			return res.status(400).json({
@@ -230,7 +222,7 @@ exports.instructorDashboard = async (req, res) => {
 		const courseDetails = await Course.find({ instructor: req.user.id })
 
 
-		// yeh wala code bhi payment wale code k baad hi kaam karega
+		
 		const courseData = courseDetails.map((course) => {
 			
 			
@@ -253,7 +245,7 @@ exports.instructorDashboard = async (req, res) => {
 			return courseDataWithStats
 		})
 
-		// console.log("courseData", courseData)
+	
 
 		return res.status(200).json({
 			success: true,

@@ -38,8 +38,8 @@ root.render(
 
 
 
-// yeh error saffa se ko dikhana h 
-// logo gayab ho rha h small screeen
+ 
+
 // payment  service me verify payment mei cart epmty wala function nhi chl rha h
 // slice me completed wale array me koi value nhi aarhi h ... uske wajha se progress baar me koi reflection nhi ho rha h
 // instructor ko myCourse me time duration ko sahi krna  h
@@ -47,14 +47,6 @@ root.render(
 
 
 
-
-
-
-
-
-// --------------backend----
-//
-// remoive all console
 
 
 

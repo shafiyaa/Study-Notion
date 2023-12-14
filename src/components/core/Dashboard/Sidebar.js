@@ -44,8 +44,8 @@ const Sidebar = () => {
                                     return null
                                 }
                                 return (
-                                    <div className='w-full'>
-                                        <SidebarOption link={link} iconName={link.icon} key={link.id} />
+                                    <div className='w-full' key={link.id}>
+                                        <SidebarOption link={link} iconName={link.icon}  />
                                     </div>
                                 )
 

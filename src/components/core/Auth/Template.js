@@ -10,7 +10,7 @@ const Template = ({ title, description1, description2, image, formType }) => {
     
 
     return (
-        <div className='grid min-h-[calc(100vh-3.5rem)] place-items-center'>
+        <div className='grid min-h-[calc(100vh-10rem)] place-items-start md:mt-30 mt-10 px-10 lg:px-2 '>
             {
                 loading ? (
                     <div className='custom-loader' />

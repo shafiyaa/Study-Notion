@@ -18,7 +18,7 @@ export function updateDisplayPicture(token, formData) {
         dispatch(setLoading(true))
 
         try {
-            console.log("Service mei hu")
+          
             const response = await apiConnector("PUT",
                 UPDATE_DISPLAY_PICTURE_API,
                 formData,
@@ -27,7 +27,7 @@ export function updateDisplayPicture(token, formData) {
                     Authorization: `Bearer ${token}`
                 })
 
-            console.log("response while Update the Profile Picture : ", response)
+           
 
             if (!response.data.success) {
                 console.log("updating failed")
@@ -58,17 +58,15 @@ export function updateProfile(token, formData) {
 
         dispatch(setLoading(true))
         const toastId = toast.loading("Loading...");
-        console.log("in the services")
+       
 
         try {
-            console.log("I am token in setting : " , token)
+            
             const response = await apiConnector("PUT",
                 UPDATE_PROFILE_API, formData, {
                 Authorization: `Bearer ${token}`
             })
-            console.log("I am response : " , response);
-            console.log("after response")
-            console.log("update profile response", response)
+          
 
             if (!response.data.success) {
                 throw new Error(response.data.message)
@@ -98,8 +96,7 @@ export  function changePassword(token, data) {
    
     
    return async(dispatch)=>{
-    console.log("I am in ApI COnnector")
-    console.log("in the setting API")
+    
     dispatch(setLoading(true))
     const toastId = toast.loading("Loading...")
     try {
@@ -134,8 +131,7 @@ export function deleteProfile (token, navigate) {
             const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, {
                 Authorization: `Bearer ${token}`
             })
-            console.log("delete profile response:", response)
-
+           
             if (!response.data.success) {
                 throw new Error(response.data.message)
               }
