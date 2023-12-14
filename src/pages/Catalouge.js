@@ -20,10 +20,10 @@ const Catalouge = () => {
             id: 1,
             name: "Most Popular"
         },
-        {
-            id: 2,
-            name: "New"
-        },
+        // {
+        //     id: 2,
+        //     name: "New"
+        // },
         // {
         //     id:3,
         //     name:"Trending"
@@ -107,11 +107,11 @@ const Catalouge = () => {
                                     onClick={()=>setActive(data.id)}
                                     className='group relative transition-all px-4  '>
                                         <p 
-                                        className={`${active === data.id ? "text-yellow-100":"text-richblack-300"} cursor-pointer relative group-hover:text-xl hover:text-yellow-500
+                                        className={`${active === data.id ? "text-yellow-100":"text-richblack-300"} cursor-pointer relative 
                                         transition-all duration-200  `}
                                         // className='relative  cursor-pointer group-hover:text-yellow-100'
                                         >{data.name}</p>
-                                        <span className=' z-10 absolute b-0 l-0 h-[2px] w-0 bg-yellow-500  transition-all duration-400 ease-linear  group-hover:w-full
+                                        <span className=' z-10 absolute b-0 l-0 h-[2px] w-0 bg-yellow-500  transition-all duration-400 ease-linear  
                                         '></span>
 
                                     </div>

@@ -24,7 +24,7 @@ export function getUserDetails(token, navigate) {
                 null,
                 { Authorization: `Bearer ${token}` })
 
-            console.log("get user detail api ka response: ", response)
+           
 
             if (!response.data.success) {
                 throw new Error(response.data.message)
@@ -67,7 +67,7 @@ export async function getUserEnrolledCourses(token) {
             throw new Error(response.data.message)
         }
 
-        // console.log("RESPONSE ", response)
+        
         result = response.data.data
     
 

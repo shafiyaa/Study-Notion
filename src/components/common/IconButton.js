@@ -1,8 +1,8 @@
 import React from 'react'
 
-const IconButton = ({ text, onclick, children, disabled, outline = false, customClass, type }) => {
+const IconButton = ({ text, onclick, children, disabled, customClass, type }) => {
     return (
-        <button disabled={disabled} onClick={onclick} type={type} className={customClass} outline>
+        <button disabled={disabled} onClick={onclick} type={type} className={customClass}>
             {
                 children ? (
                 <> <span>{text}</span>

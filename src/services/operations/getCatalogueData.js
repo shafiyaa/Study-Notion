@@ -9,8 +9,7 @@ const { CATALOGUEPAGEDATA_API} = catalogueData
 export  const getCatalogueData = async(categoryId) => {
 
   let result = []
-  console.log("priting id in getCatalougeData", categoryId)
-
+  
   try{
     const response = await apiConnector("POST", CATALOGUEPAGEDATA_API,{categoryId: categoryId})
     
@@ -31,7 +30,5 @@ export  const getCatalogueData = async(categoryId) => {
 }
 
 
-// export const getCourseData = async(courseId)=>{
-//   let result = {}
-// }
+
 

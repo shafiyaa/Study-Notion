@@ -93,9 +93,7 @@ exports.updateSection = async (req, res) => {
 
 // DELETE a section
 exports.deleteSection = async (req, res) => {
-	console.log("backend k delete section mai hain")
-
-	try {
+		try {
 		const { sectionId, courseId } = req.body
 		await Course.findByIdAndUpdate(courseId, {
 			$pull: {
@@ -104,8 +102,7 @@ exports.deleteSection = async (req, res) => {
 		})
 
 		const section = await Section.findById(sectionId)
-		console.log(sectionId, courseId);
-		console.log("pritng the Section", section)
+		
 
 		if (!section) {
 			return res.status(404).json({
@@ -114,7 +111,7 @@ exports.deleteSection = async (req, res) => {
 			})
 		}
 
-		console.log("before delete the subsection")
+		
 		// delete the subsection in the Section
 		await SubSection.deleteMany({
 			_id:{
@@ -122,11 +119,11 @@ exports.deleteSection = async (req, res) => {
 			}
 		})
 
-		console.log("before delete the seciton")
+		
 		await Section.findByIdAndDelete(sectionId)
 
 		// find the updated course and return
-		console.log("updating the seciton after deleting")
+		
 		const course = await Course.findById(courseId).populate({
 			path: "courseContent",
 			populate: {

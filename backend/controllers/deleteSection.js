@@ -24,8 +24,7 @@ exports.deleteSection = async (req, res) => {
             });
         }
 
-        console.log("before delete the subsection");
-        delete the; subsection in the; Section;
+       
         await SubSection.deleteMany({
             _id: {
                 $in: section.subSection

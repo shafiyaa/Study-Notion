@@ -12,19 +12,19 @@ exports.createRating = async (req, res) => {
        
         const {rating, review, courseId} = req.body;
 
-        //------ this code work after paymeny-------
-        //check if user is enrolled or not
-        // const courseDetails = await Course.findOne(
-        //                             {_id:courseId,
-        //                             studentsEnrolled: {$elemMatch: {$eq: userId} },
-        //                         });
+        //------ this code work after payment-------
+        // check if user is enrolled or not
+        const courseDetails = await Course.findOne(
+                                    {_id:courseId,
+                                    studentsEnrolled: {$elemMatch: {$eq: userId} },
+                                });
 
-        // if(!courseDetails) {
-        //     return res.status(404).json({
-        //         success:false,
-        //         message:'Student is not enrolled in the course',
-        //     });
-        // }
+        if(!courseDetails) {
+            return res.status(404).json({
+                success:false,
+                message:'Student is not enrolled in the course',
+            });
+        }
 
 
 

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { NavbarLinks } from "../../data/navbar-links"
 import { Link, useNavigate } from 'react-router-dom'
 import { BiDownArrow } from "react-icons/bi"
-import { useOnClickOutside } from "../../hooks/useOnClickOutside"
+import  useOnClickOutside from "../../hooks/useOnClickOutside"
 import { useSelector, useDispatch } from 'react-redux'
 import { IoIosCloseCircleOutline } from "react-icons/io"
 import { logout } from '../../services/operations/authAPI'
@@ -17,22 +17,28 @@ const ResponsiveNavbar = ({ setHamburger, MatchRoute, subLink }) => {
 
 
     const [openCatalogue, setOpenCatalogue] = useState(false)
-    const navRef = useRef(null)
+    const navRef = useRef(null);
+    const catalogueRef = useRef(null)
+
+    // useOnClickOutside(navRef, () => setHamburger(false))
+
+    useOnClickOutside(navRef , ()=> setHamburger(false))
+    useOnClickOutside(catalogueRef , ()=> setOpenCatalogue(false));
 
     return (
-        <div className='md:invisible border border-blue-100 rounded-md py-2
+        <div   ref={navRef}  onClick={(event) => event.stopPropagation()}  className='md:invisible border border-blue-100 rounded-md py-2
     bg-white bg-opacity-10 backdrop-blur-md 
     flex flex-col gap-3 items-center relative
     '>
 
 
-            <div className='hover:text-blue-100 text-richblack-100 absolute right-3 text-2xl '
+            <div className='hover:text-pink-400 text-richblack-100  absolute right-8 text-2xl '
                 onClick={() => setHamburger(false)}>
                 <IoIosCloseCircleOutline />
             </div>
 
             <ul className='flex flex-col gap-3 items-center justify-start mt-8'
-                ref={navRef} onClick={(event) => event.stopPropagation()}>
+               >
                 {
                     NavbarLinks.map((element, index) => (
                         <li key={index} className='cursor-pointer  py-2 px-4'>
@@ -50,7 +56,7 @@ const ResponsiveNavbar = ({ setHamburger, MatchRoute, subLink }) => {
                                         }></BiDownArrow>
 
                                         {openCatalogue &&
-                                            <div
+                                            <div ref={catalogueRef}
                                                 className={`border border-blue-200 rounded-md h-fit w-fit absolute top-[50%]  -left-4 right-10 translate-y-[25%] z-20  bg-white bg-opacity-10 backdrop-blur-md py-4 px-10 flex flex-col gap-6
                                      `}>
                                                 {

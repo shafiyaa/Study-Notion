@@ -62,12 +62,17 @@ const Navbar = () => {
   return (
     <div className=' md:h-18 h-24 flex  item-center justify-center border-b border-richblack-600  '>
 
-      <div className='flex  sm:w-full w-[85%] max-w-maxContent items-center md:justify-evenly justify-between gap-2 mx-16 py-2  relative'>
+      {/* <div className='flex  sm:w-full w-[85%] border border-blue-100 max-w-maxContent items-center md:justify-evenly justify-between gap-2 mx-16 py-2  relative'> */}
+
+      <div className='flex flex-row lg:w-11/12 md:w-[95%] w-full  max-w-maxContent items-center justify-between md:px-8 sm:px-4  px-3 '>
+
 
         <Link to="/" className=' ' >
-          <img src={Logo} loading='lazy' alt='Logo'
-            className='w-[120px] h-[30px] sm:w-[160px] sm:h-[42px]' />
+          <img src={Logo}  alt='Logo' className='sm:max-w-[160px] sm:h-[42px] max-w-[140px] h-[35px]'
+          />
         </Link>
+
+        {/* className='w-[120px] h-[30px] sm:w-[160px] sm:h-[42px]' */}
 
         {/* navbar */}
         <nav className='invisible md:visible text-[15px] lg:text-[18px]'>
@@ -196,7 +201,7 @@ const Navbar = () => {
 
 
 
-        
+
         {/* hamburger icon */}
         <div className='text-white text-2xl md:invisible mr-8 absolute right-0 '
           onClick={() => setHamburger(!hamburger)}>
@@ -204,7 +209,7 @@ const Navbar = () => {
         </div>
         {
           hamburger && <div className='absolute   translate-x-24 top-3 right-14 z-20  
-           h-fit w-full px-6 py-4 md:invisible'>
+           h-fit w-[92%]  px-6 py-4 md:invisible'>
             <ResponsiveNavbar setHamburger={setHamburger} MatchRoute={MatchRoute} subLink={subLinks} />
 
           </div>

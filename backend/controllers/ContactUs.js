@@ -5,7 +5,7 @@ const mailSender = require("../utils/mailSender")
 
 exports.contactUs = async(req,res)=>{
 
-  console.log("Contact us ke controller mei aa gaye")
+ 
 
     const { email, firstname, lastname, message, phoneNumber, countrycode } = req.body
     
