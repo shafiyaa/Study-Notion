@@ -161,6 +161,7 @@ const VideoDetails = () => {
           (
 
             <Player
+            fluid={true}
               ref={playerRef}
               aspectRatio='16:9'
               playsInline

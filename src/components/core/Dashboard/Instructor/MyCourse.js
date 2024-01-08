@@ -21,7 +21,7 @@ const MyCourse = () => {
     const fetchCourse = async () => {
 
         const result = await fetchInstructorCourses(token);
-        console.log("Result fetch instructor courses at zero index : ", result[0]);
+      
 
 
 
@@ -37,7 +37,7 @@ const MyCourse = () => {
     const deleteAll = async () => {
         setLoading(true)
         await deleteAllCourse(token)
-        console.log("Delte all the course")
+        
         setLoading(false) ;
         setModal(null);
     }

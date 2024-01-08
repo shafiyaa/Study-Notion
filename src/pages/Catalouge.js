@@ -140,7 +140,7 @@ const Catalouge = () => {
                 {/* section 2 */}
                 <section className='py-2'>
                     <p className='md:text-4xl text-2xl my-3'>Top Courses in Other Categories
-                    {cataloguePageData?.data?.selectedCategory?.name}
+                    {/* {cataloguePageData?.data?.selectedCategory?.name} */}
                     </p>
                     <div className='mt-5 px-16'>
                         <CourseSlider Courses={cataloguePageData?.data?.differentCategory?.courses}></CourseSlider>

@@ -32,9 +32,9 @@ const LoginForm = () => {
     // submit handler
     const submitHandler = (event) => {
         event.preventDefault()
-        console.log("login form submit handler")
+        
         dispatch(login(email, password, navigate));
-        console.log("Login form submit ho gaya")
+        
        
     }
    

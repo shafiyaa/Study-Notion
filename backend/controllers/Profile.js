@@ -138,7 +138,7 @@ exports.getEnrolledCourses = async (req, res) => {
 		
 
 		const userId = req.user.id
-		const userDetails = await User.findOne({
+		let userDetails = await User.findOne({
 			_id: userId,
 		}).populate({
 			path: "courses",
@@ -155,8 +155,11 @@ exports.getEnrolledCourses = async (req, res) => {
 
 
 
+		userDetails = userDetails.toObject();
+
 		// calculate duration
-		var SubsectionLength = 0
+		var SubsectionLength = 0;
+
 		for (var i = 0; i < userDetails.courses.length; i++) {
 			 
 			
@@ -182,10 +185,10 @@ exports.getEnrolledCourses = async (req, res) => {
 			courseProgressCount = courseProgressCount?.completedVideos.length
 
 			if(SubsectionLength === 0){
-				userDetails.courses[i].progessPercentage= 100
+				userDetails.courses[i].progressPercentage= 100
 			}else{
 				const multiplier = Math.pow(10,2)
-				userDetails.courses[i].progessPercentage = Math.round( (courseProgressCount / SubsectionLength )*100 *multiplier)/multiplier
+				userDetails.courses[i].progressPercentage = Math.round( (courseProgressCount / SubsectionLength )*100 *multiplier)/multiplier
 			}
 
 
