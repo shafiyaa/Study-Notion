@@ -26,27 +26,7 @@ const CourseTable = ({ courses, setCourses,}) => {
     const TRUNCATE_LENGTH = 20
     const [timeDuration, setTimeDuration] = useState([])
 
-    // const count = (index)=>{
-    //     console.log("1")
-    //     console.log("print the first course",courses[0])
-    //     let time = 0
-    //     courses[index]?.courseContent.forEach( (section)=>{
-    //         console.log("2")
-    //         section?.subSection.forEach( (lec)=> {
-    //             console.log("3")
-    //             const timeIn = parseInt(lec?.timeDuration)
-    //             console.log("4")
-    //             time += timeIn
-    //         })
-    //     })
-
-    //     const timeDurationInSec = timeInSec(time)
-    //     setTimeDuration(timeDurationInSec)
-    // }
-
-    // useEffect ( ()=> {
-    //     count()
-    // },[])
+   
   
 
     const courseDelete = async (courseId) => {
@@ -119,7 +99,7 @@ const CourseTable = ({ courses, setCourses,}) => {
                                             </div>
                                         </Td>
                                         
-                                        <Td className="text-sm font-medium text-richblack-100 my-1 sm:my-0 ">{timeDuration} 10min</Td>
+                                        <Td className="text-sm font-medium text-richblack-100 my-1 sm:my-0 ">10min</Td>
                                         <Td className="text-sm font-medium text-richblack-100">Rs {course?.price}</Td>
 
                                         <Td className="text-xl text-richblack-100 my-1 sm:my-0 ">

@@ -67,9 +67,16 @@ const cartSlice = createSlice({
          toast.success("Course removed from the Cart")
 
       },
+
       // reset CArt
       resetCart: (state) => {
+<<<<<<< HEAD
        
+=======
+
+
+         console.log("emptying the cart ")
+>>>>>>> eb618be8b93ef8f1f775b63033702647cd45d4ea
          state.cart = []
          state.totalItems = 0
          state.totalPrice = 0
@@ -77,6 +84,8 @@ const cartSlice = createSlice({
          localStorage.removeItem("cart")
          localStorage.removeItem("totalItems")
          localStorage.removeItem("totalPrice")
+
+         
       }
 
    }
