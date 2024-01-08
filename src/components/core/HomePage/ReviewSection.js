@@ -19,12 +19,11 @@ const ReviewSection = () => {
   useEffect(() => {
     const fetchAllReviews = async () => {
       const { data } = await apiConnector("GET", REVIEWS_DETAILS_API)
-      console.log("rating in the homepage", data)
-
+      
       if (data?.success) {
         setReviews(data?.data)
       }
-      console.log("printing reviews", reviews)
+      
     }
     fetchAllReviews()
 

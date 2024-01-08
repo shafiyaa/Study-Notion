@@ -99,11 +99,9 @@ export async function buyCourse(token, courses,userDetails, navigate, dispatch){
 }
 
 async function sendPaymentSuccessEmail(response, amount, token){
-    console.log("response", response)
-    console.log("amount", amount)
-    console.log("token ", token)
+    
     try{
-        console.log("before sending the mail")
+        
          await apiConnector("POST",
         SEND_PAYMENT_SUCCESS_EMAIL_API, {
             orderId : response.raxorpay_order_id,
@@ -113,13 +111,13 @@ async function sendPaymentSuccessEmail(response, amount, token){
             Authorization: `Bearer ${token}`
         })
        
-        console.log("after sending the mail")
+       
             toast.success("Enrollment Email is Sent")
        
 
     }catch(error){
         console.log("error in send Payment Success Email")
-        console.log(error)
+       
     }
 
 }
@@ -140,12 +138,12 @@ async function verifyPayment(bodyData,token, navigate,dispatch) {
             throw new Error(response.data.message);
         }
 
+        
+        dispatch(resetCart());
         toast.success("payment Successful, you are addded to the course");
         navigate("/dashboard/enrolled-courses");
 
-        console.log("before reset Cart")
-        dispatch(resetCart());
-        console.log("after reset the cart")
+        
      
        
         

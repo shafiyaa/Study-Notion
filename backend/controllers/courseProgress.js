@@ -4,10 +4,13 @@ const SubSection = require("../models/SubSection")
 
 
 exports.updateCourseProgress = async(req, res)=>{
- 
+
+    
  
     const {courseId, subSectionId} = req.body
     const userId = req.user.id
+
+    
   
   
    
@@ -40,7 +43,7 @@ exports.updateCourseProgress = async(req, res)=>{
 
           
 
-          
+         
             // re-completing video/ subsection
             if(courseProgress.completedVideos.includes(subSectionId)){
                
@@ -48,6 +51,8 @@ exports.updateCourseProgress = async(req, res)=>{
                     error:"Subsection already completed",
                 });
             }
+
+            
             
           
             // push the completed video

@@ -64,6 +64,13 @@ const EnrolledCourses = () => {
   // }
 
 
+  if(enrolledCourses){
+    console.log("Enrolled Course: " , enrolledCourses);
+    console.log("Time Duration: " , enrolledCourses[0]?.totalDuration);
+
+    console.log("Progress percentage : " , enrolledCourses[0]?.progressPercentage);
+  }
+
 
   return (
     <div className=' sm:ml-48 ml-2 md:ml-8'>
@@ -76,7 +83,7 @@ const EnrolledCourses = () => {
       ) : !enrolledCourses.length ? (
         <p className="grid h-[10vh] w-full place-content-center text-richblack-5">
           You have not enrolled in any course yet.
-          {/* TODO: Modify this Empty State */}
+          
         </p>
       ) : (
         <div className="my-8 text-richblack-5">
@@ -126,6 +133,8 @@ const EnrolledCourses = () => {
                   completed={course.progressPercentage || 0}
                   height="8px"
                   isLabelVisible={false}
+                  bgColor='#06D6A0'
+                  baseBgColor='#2C333F'
                 />
               </div>
             </div>
