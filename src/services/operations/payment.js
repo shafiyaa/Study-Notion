@@ -98,15 +98,9 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
     toast.dismiss(toastId)
 }
 
-<<<<<<< HEAD
-async function sendPaymentSuccessEmail(response, amount, token){
-    
-    try{
-        
-         await apiConnector("POST",
-        SEND_PAYMENT_SUCCESS_EMAIL_API, {
-            orderId : response.raxorpay_order_id,
-=======
+
+
+
 async function sendPaymentSuccessEmail(response, amount, token) {
     console.log("response", response)
     console.log("amount", amount)
@@ -116,19 +110,17 @@ async function sendPaymentSuccessEmail(response, amount, token) {
         await apiConnector("POST",
             SEND_PAYMENT_SUCCESS_EMAIL_API, {
             orderId: response.raxorpay_order_id,
->>>>>>> eb618be8b93ef8f1f775b63033702647cd45d4ea
+
             paymentId: response.raxorpay_payment_id,
             amount
         }, {
             Authorization: `Bearer ${token}`
         })
-<<<<<<< HEAD
+
        
        
             toast.success("Enrollment Email is Sent")
        
-=======
->>>>>>> eb618be8b93ef8f1f775b63033702647cd45d4ea
 
         console.log("after sending the mail")
         toast.success("Enrollment Email is Sent")
@@ -141,40 +133,6 @@ async function sendPaymentSuccessEmail(response, amount, token) {
 
 }
 
-// verify payment
-// async function verifyPayment(bodyData, token, navigate, dispatch) {
-
-//     const toastId = toast.loading("Verifying Payment...")
-
-
-
-//     try {
-
-//         const response = await apiConnector("POST", COURSE_VERIFY_API, bodyData, {
-//             Authorization: `Bearer ${token}`
-//         })
-//         if (!response.data.success) {
-//             throw new Error(response.data.message);
-//         }
-
-//         toast.success("payment Successful, you are addded to the course");
-//         navigate("/dashboard/enrolled-courses");
-
-//         console.log("before reset Cart")
-//         dispatch(resetCart());
-//         console.log("after reset the cart")
-
-
-
-//     } catch (error) {
-//         console.log("Error in verify payment")
-//         console.log(error)
-
-//     }
-
-//     toast.dismiss(toastId);
-
-// }
 
 // verifyPayment function
 
@@ -197,7 +155,7 @@ async function verifyPayment(bodyData , token , navigate , dispatch){
             throw new Error (response.data.message);
         }
 
-<<<<<<< HEAD
+
         
         dispatch(resetCart());
         toast.success("payment Successful, you are addded to the course");
@@ -211,7 +169,7 @@ async function verifyPayment(bodyData , token , navigate , dispatch){
         console.log("Error in verify payment")
         console.log(error)
         
-=======
+
 
         toast.success("Payment Successfull , You are added to the course");
         navigate("/dashboard/enrolled-courses");
@@ -223,12 +181,6 @@ async function verifyPayment(bodyData , token , navigate , dispatch){
         console.log("After reset cart")
 
 
-    }catch(err){
-
-        console.log("Payment Verify Error : " , err);
-        toast.error("Could not verify payment");
-
->>>>>>> eb618be8b93ef8f1f775b63033702647cd45d4ea
     }
 
     toast.dismiss(toastId);

@@ -57,18 +57,13 @@ const EnrolledCourses = () => {
     )
   }
 
-  // if (!enrolledCourses) {
-  //   return (
-  //     <div className='text-white text-2xl'>Enrolled course ki value abhi aayi nhi h</div>
-  //   )
-  // }
-
+ 
 
   if(enrolledCourses){
-    console.log("Enrolled Course: " , enrolledCourses);
+    
     console.log("Time Duration: " , enrolledCourses[0]?.totalDuration);
 
-    console.log("Progress percentage : " , enrolledCourses[0]?.progressPercentage);
+   
   }
 
 
@@ -126,7 +121,7 @@ const EnrolledCourses = () => {
               </div>
 
 
-              <div className="w-1/4 text-center px-2 py">{course?.totalDuration} 15 min</div>
+              <div className="w-1/4 text-center px-2 py">{course?.totalDuration} </div>
               <div className="flex w-1/5 flex-col gap-2 md:px-2 md:py-3   text-center">
                 <p>Progress: {course.progressPercentage || 0}%</p>
                 <ProgressBar

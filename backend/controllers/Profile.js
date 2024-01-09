@@ -144,18 +144,26 @@ exports.getEnrolledCourses = async (req, res) => {
 			path: "courses",
 			populate: {
 				path: "courseContent",
-				popultate: {
+				populate: {
 					path: "subSection",
-					// select: "-videoUrl"
+					
 				}
 			}
 		}).exec()
 
 		
 
+     console.log("----------------------------------------------");
 
+	 console.log("UserDetails: " , userDetails)
 
 		userDetails = userDetails.toObject();
+
+
+
+		console.log("*******************************************************************************");
+
+		console.log("UserDetails: " , userDetails)
 
 		// calculate duration
 		var SubsectionLength = 0;
@@ -169,11 +177,12 @@ exports.getEnrolledCourses = async (req, res) => {
 			for (var j = 0; j < userDetails.courses[i].courseContent.length; j++) {
 
 				totalDurationInSeconds += userDetails.courses[i].courseContent[j].subSection.reduce((acc, curr) => acc + parseInt(curr.timeDuration), 0)
-                     
+				
 				
 				userDetails.courses[i].totalDuration = convertSecondsToDuration(totalDurationInSeconds)
 
 				SubsectionLength += userDetails.courses[i].courseContent[j].subSection.length
+				
 			}
 
 			

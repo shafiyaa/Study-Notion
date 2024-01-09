@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast"
 
-import { upateCompletedLectures } from "../../reducers/slices/viewCourseSlice"
+// import { upateCompletedLectures } from "../../reducers/slices/viewCourseSlice"
 
 // import {setLoading}  from "../../reducers/slices/profileSlice"
 import { apiConnector } from "../apiConnector"

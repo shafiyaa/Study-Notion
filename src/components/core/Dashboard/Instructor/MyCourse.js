@@ -21,12 +21,14 @@ const MyCourse = () => {
     const fetchCourse = async () => {
 
         const result = await fetchInstructorCourses(token);
-      
+        console.log("result ", result.instructorCourses);
+        console.log("Time duration : " ,result.totalDuration)
+    //   console.log("subssection duratiion", result[0].courseContent[0].subSection[0].timeDuration)
 
 
 
         if (result) {
-            setCourses(result)
+            setCourses(result.instructorCourses)
         }
 
     }
