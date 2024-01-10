@@ -1,3 +1,4 @@
+
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const OTP = require("../models/OTP");
@@ -40,7 +41,7 @@ exports.signup = async (req, res) => {
 				message: "All Fields are required",
 			});
 		}
-		console.log("sec")
+		
 		// Check if password and confirm password match
 		if (password !== confirmPassword) {
 			return res.status(400).json({
@@ -49,7 +50,7 @@ exports.signup = async (req, res) => {
 					"Password and Confirm Password do not match. Please try again.",
 			});
 		}
-		console.log("third")
+		
 		// Check if user already exists
 		const existingUser = await User.findOne({ email });
 		if (existingUser) {
