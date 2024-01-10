@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://study-notion-front.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
