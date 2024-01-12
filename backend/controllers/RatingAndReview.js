@@ -4,7 +4,7 @@ const Course = require("../models/Course");
 
 //createRating
 exports.createRating = async (req, res) => {
-    console.log("int th create rating")
+   
     try{
 
         
