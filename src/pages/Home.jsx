@@ -263,7 +263,7 @@ export const Home = () => {
                 </div>
 
                 {/* lower- review */}
-                <div className='mt-20 '>
+                <div className='mt-20  w-full'>
                     <h4 className='sm:text-4xl text-2xl text-richblack-100 font-semibold mb-6 text-center'>Reviews from other learners</h4>
                     <ReviewSection></ReviewSection>
                 </div>
@@ -278,7 +278,7 @@ export const Home = () => {
 
           
 
-            <div className='mt-10'>
+            <div className='mt-10 '>
                 <Footer></Footer>
             </div>
         </div>

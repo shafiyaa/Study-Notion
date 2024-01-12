@@ -440,11 +440,11 @@ export const markLectureAsComplete = async (data, token) => {
  
   const toastId = toast.loading("Loading...")
   try {
-    console.log("enter in the mark lecture")
+    
     const response = await apiConnector("POST", LECTURE_COMPLETION_API, data, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("coming from backend")
+    
    
     
 

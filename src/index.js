@@ -40,8 +40,6 @@ root.render(
 
  
 
-// slice me completed wale array me koi value nhi aarhi h ... uske wajha se progress baar me koi reflection nhi ho rha h
-// instructor ko myCourse me time duration ko sahi krna  h
 
 
 

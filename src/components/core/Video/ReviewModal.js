@@ -16,7 +16,7 @@ const ReviewModal = ({ setModal }) => {
   } = useForm()
 
   useEffect(() => {
-    console.log("in the Review Modal")
+    
     setValue("courseExperience", "")
     setValue("courseRating", 0)
   }, [])

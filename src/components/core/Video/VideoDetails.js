@@ -32,8 +32,7 @@ const VideoDetails = () => {
         const filterData = courseSectionData.filter((data) => data._id === sectionId)
 
         const filterVideoData = filterData?.[0].subSection.filter((data) => data._id === subSectionId)
-        // console.log("specific details")
-        // console.log("data", filterData)
+        
         setVideoData(filterVideoData[0])
         setVideoEnded(false)
       }
@@ -118,9 +117,7 @@ const VideoDetails = () => {
 
   const lectureCompletion = async () => {
 
-    // iska controller likhna 
-    
-    console.log(" in the lecture Completion")
+   
     setLoading(true)
 
     const res = await markLectureAsComplete({
@@ -128,7 +125,7 @@ const VideoDetails = () => {
     }, token)
 
     if (res) {
-      console.log("after complete the lec , add the lec in the updated completed lectures array")
+     
       dispatch(updateCompletedLectures(subSectionId))
     }
     setLoading(false)
@@ -180,7 +177,7 @@ const VideoDetails = () => {
                   }}>
                     {/* completed button */}
 
-                    {/* mark button - uncomment this code after payment code */}
+                    
                     {
                       !completed.includes(subSectionId) && (
                         

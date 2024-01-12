@@ -27,7 +27,7 @@ const VerifyEmail = () => {
   // }, [])
 
   function submitHandler(event) {
-    console.log("verify-page submit handler")
+    
     event.preventDefault()
     // dispatch(setLoading(true))
 

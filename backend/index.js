@@ -21,20 +21,20 @@ const PORT = process.env.PORT || 4000;
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-// 	cors({
-// 		origin:"http://localhost:3000",
-// 		credentials:true,
-// 	})
-// )
-
 app.use(
-  cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+	cors({
+		origin:"http://localhost:3000",
+		credentials:true,
+	})
+)
+
+// app.use(
+//   cors({
+//     origin: ["https://deploy-mern-1whq.vercel.app"],
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
 
 app.use(
   fileUpload({

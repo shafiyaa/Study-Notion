@@ -38,12 +38,12 @@ const ReviewSection = () => {
           freeMode={true}
           autoplay={{ delay: 2500 }}
           // modules={[FreeMode, Pagination, Autoplay]}
-          className='w-full '
+          className='w-9/12  '
         >
 
           {
             reviews.map((review, index) => (
-              <SwiperSlide key={index} className='flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25 h-[250px] min-h-[150px]'>
+              <SwiperSlide key={index} className='flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25 h-[300px]  min-h-[150px] '>
 
                 <img src={review?.user?.image ? review?.user?.image : `https://api.dicebear.com/5.x/initials/svg?seed=${review?.user?.firstName} ${review?.user?.lastName}`}
                   alt="profile-pic"
