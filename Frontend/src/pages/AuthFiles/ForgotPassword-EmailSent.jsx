@@ -14,7 +14,7 @@ const ResetPassword = () => {
 
   const submitHandler = (event) => {
     event.preventDefault()
-    console.log("Reset password")
+   
     dispatch(getPasswordResetToken(email, setEmailSent))
   }
   return (

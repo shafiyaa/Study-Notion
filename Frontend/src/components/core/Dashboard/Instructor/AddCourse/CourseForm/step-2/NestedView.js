@@ -28,7 +28,7 @@ const NestedView = ({ handleChangeEditSectionName }) => {
       courseId: course._id,
     },
       token)
-    // console.log("section is deleted")
+    
     if (result) {
       dispatch(setCourse(result))
     }
@@ -55,10 +55,10 @@ const NestedView = ({ handleChangeEditSectionName }) => {
 
       <div className='rounded-lg bg-richblack-700 py-6 md:px-8 sm:px-4 px-1 '>
         {
-          course?.courseContent?.map((section) => {
+          course?.courseContent?.map((section , index) => {
             return (
 
-              <details key={section._id} open className='mt-6 '>
+              <details key={index} open className='mt-6 '>
                 {/* section */}
                 <summary className='flex items-center justify-between gap-x-3 border-b-2 border-b-richblack-600 cursor-pointer py-2 '>
                   <div className='flex sm:flex-row items-center sm:gap-x-3 gap-x-[6px]  px-3 w-full'>
@@ -103,8 +103,8 @@ const NestedView = ({ handleChangeEditSectionName }) => {
                 {/* subsection */}
                 <div className='sm:ml-8 ml-6 '>
                   {
-                    section?.subSection?.map((data) => (
-                      <div key={data?._id}
+                    section?.subSection?.map((data , index) => (
+                      <div key={index}
                         className=' flex items-center  cursor-pointer md:justify-around justify-between gap-x-3 border-b-2 border-b-richblack-600 py-2 '
                         onClick={() => setViewSubSection(data)}>
 

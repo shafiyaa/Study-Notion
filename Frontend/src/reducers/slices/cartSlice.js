@@ -17,8 +17,7 @@ const cartSlice = createSlice({
    initialState: initialState,
    reducers: {
 
-      //  HW- add toast to this function
-      // add to CART
+      
       addToCart: (state, value) => {
          const course = value.payload
          const index = state.cart.findIndex((item) => (item._id === course._id)
@@ -73,8 +72,7 @@ const cartSlice = createSlice({
 
 
 
-         console.log("emptying the cart ")
-
+         
          state.cart = []
          state.totalItems = 0
          state.totalPrice = 0

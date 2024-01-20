@@ -12,14 +12,14 @@ const RenderTotalAmount = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  console.log("TotalPrice : ", totalPrice);
+
   
 
   function buyCourseHandler(){
     const courses = cart.map( (course)=> (course._id))
     buyCourse(token,courses,user,navigate,dispatch)
     // dispatch(resetCart())
-    console.log("Bought these Courses", courses)
+  
    
   }
 

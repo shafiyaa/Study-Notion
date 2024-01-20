@@ -79,7 +79,7 @@ const CourseInformationForm = () => {
   }, [])
 
   async function submitHandler(data) {
-    console.log("submit handler call")
+    
 
     //  updating the details in the course
     if (editCourse) {
@@ -112,7 +112,8 @@ const CourseInformationForm = () => {
         }
 
         if (currentValues.courseCategory._id !== course.category._id) {
-          formData.append("category", data.courseCategory);
+        
+          formData.append("category", data.courseCategory._id);
         }
 
         if (currentValues.courseRequirements.toString() !== course.instructions.toString()) {
@@ -133,9 +134,7 @@ const CourseInformationForm = () => {
         } else {
           toast.error("NO Changes made so far");
         }
-        console.log("PRINTING FORMDATA", formData);
-        console.log("PRINTING result", result);
-
+        
         return;
       }
 
@@ -154,21 +153,17 @@ const CourseInformationForm = () => {
     formData.append("status", COURSE_STATUS.DRAFT);
 
     setLoading(true);
-    // console.log("BEFORE add course API call");
-    // console.log("PRINTING FORMDATA", formData);
-
+    
     const result = await addCourseDetails(formData, token)
 
 
     if (result) {
-      console.log("print the result before set the step ", result)
+     
       dispatch(setStep(2))
       dispatch(setCourse(result))
     }
     setLoading(false)
-    console.log("PRINTING FORMDATA", formData);
-    console.log("PRINTING result", result);
-
+   
   }
 
   return (

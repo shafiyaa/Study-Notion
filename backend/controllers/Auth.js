@@ -35,7 +35,7 @@ exports.signup = async (req, res) => {
 			!otp
 		
 		) {
-			console.log("error in if statement")
+			
 			return res.status(403).send({
 				success: false,
 				message: "All Fields are required",
@@ -275,10 +275,9 @@ exports.changePassword = async (req, res) => {
 				.status(401)
 				.json({ success: false, message: "The password is incorrect" });
 		}
-         console.log("password match hua hai")
+        
 		
-		console.log("password match hua hai confirm se")
-
+		
 		// Update password
 		const encryptedPassword = await bcrypt.hash(newPassword, 10);
 		const updatedUserDetails = await User.findByIdAndUpdate(

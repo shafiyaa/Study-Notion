@@ -32,7 +32,7 @@ const Sidebar = () => {
     return (
         <div className='text-white relative'>
 
-            <div className='hidden md:inline'>
+            <div className='hidden md:inline h-[100vh-3.5rem] bg-richblack-700'>
 
                 <div className='flex flex-col  min-w-[222px]   border-r border-richblack-700 h-[calc(100vh-3.5rem)] bg-richblack-800 py-4  '>
 

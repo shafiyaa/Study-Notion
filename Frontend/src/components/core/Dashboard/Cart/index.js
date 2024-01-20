@@ -8,8 +8,7 @@ const Cart = () => {
     const {totalItems, totalPrice} = useSelector( (state)=> state.cart)
     // const dispatch = useDispatch()
 
-    console.log("total course", totalItems)
-    console.log("total price", totalPrice)
+
   return (
     <div className='w-11/12 max-w-[1000px] p-4  sm:ml-40 ml-8 md:ml-8 '>
         <h1 className="mb-14 text-3xl font-medium text-richblack-5">Your Cart</h1>

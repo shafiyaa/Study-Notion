@@ -98,7 +98,7 @@ const SubSectionModal = ({ modalData, setModalData, add = false, view = false, e
         formData.append("description", data.lectureDesc)
         formData.append("video", data.lectureVideo)
         setLoading(true)
-        console.log("before call the create subsection")
+       
         const result = await createSubSection(formData, token)
 
         if (result) {

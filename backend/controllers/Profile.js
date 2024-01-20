@@ -84,7 +84,7 @@ exports.getAllUserDetails = async (req, res) => {
 		const userDetails = await User.findById(id)
 			.populate("additionalDetails")
 			.exec();
-		console.log(userDetails);
+		
 		res.status(200).json({
 			success: true,
 			message: "User Data fetched successfully",
@@ -100,7 +100,7 @@ exports.getAllUserDetails = async (req, res) => {
 
 exports.updateDisplayPicture = async (req, res) => {
 	try {
-		console.log("frist")
+		
 		const displayPicture = req.files.displayPicture
 		
 
@@ -112,7 +112,7 @@ exports.updateDisplayPicture = async (req, res) => {
 			1000,
 			1000
 		)
-		console.log(image)
+		
 		const updatedProfile = await User.findByIdAndUpdate(
 			{ _id: userId },
 			{ image: image.secure_url },
@@ -153,17 +153,13 @@ exports.getEnrolledCourses = async (req, res) => {
 
 		
 
-     console.log("----------------------------------------------");
-
-	 console.log("UserDetails: " , userDetails)
+     
 
 		userDetails = userDetails.toObject();
 
 
 
-		console.log("*******************************************************************************");
-
-		console.log("UserDetails: " , userDetails)
+	
 
 		// calculate duration
 		var SubsectionLength = 0;

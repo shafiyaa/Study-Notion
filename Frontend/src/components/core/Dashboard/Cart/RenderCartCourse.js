@@ -14,15 +14,10 @@ import ReactStars from "react-rating-stars-component"
 const RenderCartCourse = () => {
   const { cart } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
-  // const [avgReviewCount, setAvgReviewCount] = useState(0)
-
-  // const countRating = (rate)=>{
-  //   let rating = GetAvgRating(rate)
-  //   return rating
-  // }
+  
   
 
-console.log("Cart : " , cart);
+
 
   return (
     <div className='mt-5 flex flex-col '>

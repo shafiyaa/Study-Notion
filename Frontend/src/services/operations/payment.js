@@ -86,7 +86,7 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
         paymentObject.open()
         paymentObject.on("payment.failed", function (response) {
             toast.error("payment failed")
-            console.log("payment is failed")
+           
             console.log(response.error)
         })
 
@@ -102,11 +102,9 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
 
 
 async function sendPaymentSuccessEmail(response, amount, token) {
-    console.log("response", response)
-    console.log("amount", amount)
-    console.log("token ", token)
+   
     try {
-        console.log("before sending the mail")
+        
         await apiConnector("POST",
             SEND_PAYMENT_SUCCESS_EMAIL_API, {
             orderId: response.raxorpay_order_id,
@@ -122,7 +120,7 @@ async function sendPaymentSuccessEmail(response, amount, token) {
             toast.success("Enrollment Email is Sent")
        
 
-        console.log("after sending the mail")
+        
         toast.success("Enrollment Email is Sent")
 
 
@@ -151,7 +149,7 @@ async function verifyPayment(bodyData , token , navigate , dispatch){
 
 
         if(!response.data.success){
-            console.log("Throw wali filed mei error of verify Payment");
+           
             throw new Error (response.data.message);
         }
 
@@ -174,11 +172,11 @@ async function verifyPayment(bodyData , token , navigate , dispatch){
         toast.success("Payment Successfull , You are added to the course");
         navigate("/dashboard/enrolled-courses");
 
-        console.log("Before reset cart")
+    
 
         dispatch(resetCart());
 
-        console.log("After reset cart")
+       
 
 
     }

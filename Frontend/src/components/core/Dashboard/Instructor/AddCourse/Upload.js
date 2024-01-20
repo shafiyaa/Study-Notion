@@ -41,7 +41,7 @@ export default function Upload({
   })
 
   const previewFile = (file) => {
-    // console.log(file)
+   
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onloadend = () => {
@@ -60,7 +60,7 @@ export default function Upload({
   }, [selectedFile, setValue]);;
 
   return (
-    <div className="flex flex-col space-y-2 border border-yellow-50">
+    <div className="flex flex-col space-y-2 ">
       <label className="text-sm text-richblack-5" htmlFor={name}>
         {label} {!viewData && <sup className="text-pink-200">*</sup>}
       </label>

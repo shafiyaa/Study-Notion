@@ -9,7 +9,7 @@ const ChipInput = ({ label, name, placeholder, register, errors, setValue, getVa
 
     useEffect(() => {
         if (editCourse) {
-            console.log("printing course in Chip Input:", course)
+          
             setChip(course?.tag)
         }
         register(name, {

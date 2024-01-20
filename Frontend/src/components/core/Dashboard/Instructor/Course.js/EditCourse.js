@@ -18,7 +18,7 @@ const EditCourse = () => {
             setLoading(true)
          
             const result = await getFullDetailsOfCourse(courseId, token)
-            console.log("pritng result in edit course",result)
+          
             if(result?.courseDetails){
                 dispatch(setEditCourse(true))
                 dispatch(setCourse(result?.courseDetails))

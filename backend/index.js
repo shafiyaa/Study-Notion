@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const userRoutes = require("./routes/User");
 const profileRoutes = require("./routes/Profile");
@@ -57,15 +58,35 @@ app.use("/api/v1/reach", contactRoutes);
 
 //def route
 
-app.get("/", (req, res) => {
-  return res.json({
-    success: true,
-    message: "Your server is up and running....",
-  });
-});
+// app.get("/", (req, res) => {
+//   return res.json({
+//     success: true,
+//     message: "Your server is up and running....",
+//   });
+// });
 
 //database connect
 dbConnect();
+
+// -------------------DEPLOYMENT-----------------
+
+const __dirname1 = path.resolve();
+
+if(process.env.NODE_ENV === 'production'){
+
+  app.use(express.static(path.join(__dirname1, '../frontend/build')));
+
+  app.get("*", (req, res)=>{
+    res.sendFile(path.join(__dirname1, '..', 'frontend', 'build', 'index.html'));
+  });
+
+}else{
+  app.get("/", (req, res)=>{
+    res.send('API is running successfully!');
+  })
+}
+
+
 
 app.listen(PORT, () => {
   console.log(`App is running at ${PORT}`);

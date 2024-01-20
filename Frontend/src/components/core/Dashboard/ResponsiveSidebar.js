@@ -26,7 +26,7 @@ const {user} = useSelector( (state)=> state.profile)
   {/* options */}
   <div className='mt-2 relative'>
     {
-      sidebarLinks.map( (link)=>{
+      sidebarLinks.map( (link )=>{
         if(link.type && user?.accountType !== link.type){
           return null
         }

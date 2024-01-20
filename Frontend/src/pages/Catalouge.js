@@ -20,14 +20,7 @@ const Catalouge = () => {
             id: 1,
             name: "Most Popular"
         },
-        // {
-        //     id: 2,
-        //     name: "New"
-        // },
-        // {
-        //     id:3,
-        //     name:"Trending"
-        // }
+       
     ]
 
 
@@ -36,7 +29,7 @@ const Catalouge = () => {
         const getCategories = async () => {
             setLoading(true)
             const result = await apiConnector("GET", categories.CATEGORIES_API)
-            // console.log("result", result);
+            
 
             const category_id = result?.data?.data?.filter((ct) => ct.name.split(" ").join("-").toLowerCase() === catalogueName)[0]._id;
 
@@ -54,7 +47,7 @@ const Catalouge = () => {
             setLoading(true)
             try {
                 const result = await getCatalogueData(categoryId);
-                console.log("printing the category response", result)
+                
                 setCataloguePageData(result)
 
             } catch (error) {
@@ -101,9 +94,9 @@ const Catalouge = () => {
                     <div className='relative'>
                         <div className='flex gap-8  px-16  text-lg  '>
                             {
-                                courseFilter.map((data) => (
+                                courseFilter.map((data , index) => (
 
-                                    <div key={data.id} 
+                                    <div key={index} 
                                     onClick={()=>setActive(data.id)}
                                     className='group relative transition-all px-4  '>
                                         <p 

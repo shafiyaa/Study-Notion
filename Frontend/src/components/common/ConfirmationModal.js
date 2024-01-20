@@ -2,7 +2,7 @@ import React from 'react'
 import IconButton from './IconButton'
 
 const ConfirmationModal = ({modalData}) => {
-  console.log("in the Confirmation modal")
+  
   return (
     <div className=' fixed inset-0 grid place-items-center z-50 overflow-auto bg-white bg-opacity-10  backdrop-blur-sm '>
         <div className='border border-richblack-400 bg-richblue-900 rounded-lg p-8 max-w-[350px]'>

@@ -288,8 +288,7 @@ export const deleteSection = async (data, token) => {
   const toastId = toast.loading("Loading...")
  
   try {
-    
-console.log ("data in delete Section", data)
+
     const response = await apiConnector("POST", DELETE_SECTION_API, data , {
       Authorization: `Bearer ${token}`,
     })

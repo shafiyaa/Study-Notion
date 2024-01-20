@@ -21,7 +21,7 @@ const EditProfile = () => {
   } = useForm()
 
   const submitProfileForm =(formData) => {
-    console.log("formData - ", formData)
+    
     try {
       
       dispatch(updateProfile(token, formData))

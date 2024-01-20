@@ -18,15 +18,14 @@ import { formatDate } from '../../../../../utilis/dateFormatter';
 
 const CourseTable = ({ courses, setCourses,}) => {
 
-    const dispatch = useDispatch()
+
+    
     const navigate = useNavigate()
     const { token } = useSelector((state) => state.auth)
     const [loading, setLoading] = useState(false)
     const [modal, setModal] = useState(false)
     const TRUNCATE_LENGTH = 20
-    const [timeDuration, setTimeDuration] = useState([])
-
-   
+    
   
 
     const courseDelete = async (courseId) => {
@@ -72,8 +71,8 @@ const CourseTable = ({ courses, setCourses,}) => {
                                 <div className='text-3xl text-blue-200 py-10 text-center font-medium'>No Course Created</div>
                             </Tr>
                             ) : (
-                                courses?.map((course) => (
-                                    <Tr key={course._id}
+                                courses?.map((course , index) => (
+                                    <Tr key={index}
                                         className="flex lg:gap-x-10 gap-x-5 border-b border-richblack-800 lg:px-6 px-3  py-8 ">
                                         <Td className='flex gap-x-4 flex-1  sm:w-9/12 w-11/12'>
                                             <img src={course?.thumbnail} alt="thumbnail" className='object-cover xl:h-[148px] xl:w-[220px] sm:h-[135px] sm:w-[200px] h-[120px] w-[190px] rounded-lg ' />
@@ -99,7 +98,7 @@ const CourseTable = ({ courses, setCourses,}) => {
                                             </div>
                                         </Td>
                                         
-                                        <Td className="text-sm font-medium text-richblack-100 my-1 sm:my-0 ">10min</Td>
+                                        <Td className="text-sm font-medium text-richblack-100 my-1 sm:my-0 ">{course?.totalDuration}</Td>
                                         <Td className="text-sm font-medium text-richblack-100">Rs {course?.price}</Td>
 
                                         <Td className="text-xl text-richblack-100 my-1 sm:my-0 ">

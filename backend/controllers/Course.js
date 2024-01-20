@@ -233,7 +233,7 @@ exports.editCourse = async (req, res) => {
     }
     // if thumbnail is not found
     if (req.files) {
-      console.log("thumbnail update");
+      
       const thumbnail = req.files.thumbnailImage;
       const thumbnailImage = await uploadImageToCloudinary(
         thumbnail,
@@ -286,27 +286,25 @@ exports.editCourse = async (req, res) => {
 };
 
 // get a list of course of particular instructor
-exports.getInstructorCourses = async (req, res) => {
-  try {
-    const instructorId = req.user.id;
+// exports.getInstructorCourses = async (req, res) => {
+//   try {
+//     const instructorId = req.user.id;
 
-    let instructorDetails = await User.findOne({_id:instructorId
-	}).populate({
-		path : "courses",
-		populate:{
-			path: "courseContent"
-		}
-	})
+//     let instructorDetails = await User.findOne({_id:instructorId
+// 	}).populate({
+// 		path : "courses",
+// 		populate:{
+// 			path: "courseContent"
+// 		}
+// 	})
 
-	console.log("--------------------------------------------------------------------------------------------------");
-
-
-	console.log("InstructorDetails : " , instructorDetails);
+// 	console.log("--------------------------------------------------------------------------------------------------");
 
 
-	instructorDetails = instructorDetails.toObject();
+// 	console.log("InstructorDetails : " , instructorDetails);
 
 
+// 	instructorDetails = instructorDetails.toObject();
 
 
 
@@ -321,36 +319,91 @@ exports.getInstructorCourses = async (req, res) => {
 
 
 
-    const instructorCourses = await Course.find({
-      instructor: instructorId,
-    })
-      .sort({ createdAt: -1 })
-      .populate({
-        path: "courseContent",
-        populate: {
-          path: "subSection",
-        },
-      });
 
-//   console.log("InstructorCourses: " , instructorCourses);
+
+//     const instructorCourses = await Course.find({
+//       instructor: instructorId,
+//     })
+//       .sort({ createdAt: -1 })
+//       .populate({
+//         path: "courseContent",
+//         populate: {
+//           path: "subSection",
+//         },
+//       });
+
+// //   console.log("InstructorCourses: " , instructorCourses);
 
  
    
 
-    return res.status(200).json({
-      success: true,
-      data: {
-		instructorCourses ,
+//     return res.status(200).json({
+//       success: true,
+//       data: {
+// 		instructorCourses ,
 		
-	  },
+// 	  },
 
+//     });
+//   } catch (error) {
+//     console.log("error in getInstructorCourses: ", error);
+//     res.status(500).json({
+//       success: false,
+//       message: "Failed to get instructor Courses",
+//       error: error.message,
+//     });
+//   }
+// };
+
+exports.getInstructorCourses = async (req, res) => {
+  try {
+    // Get the instructor ID from the authenticated user or request body
+    const instructorId = req.user.id;
+
+    let instructorDetail = await User.findById(instructorId).populate({
+      path: "courses",
+      populate: {
+        path: "courseContent",
+        populate: {
+          path: "subSection",
+        },
+      },
     });
-  } catch (error) {
-    console.log("error in getInstructorCourses: ", error);
-    res.status(500).json({
+
+   
+
+    instructorDetail = instructorDetail.toObject();
+
+    for (var i = 0; i < instructorDetail.courses.length; i++) {
+      let totalDurationInSeconds = 0;
+
+      for (
+        var j = 0;
+        j < instructorDetail.courses[i].courseContent.length;
+        j++
+      ) {
+        totalDurationInSeconds += instructorDetail.courses[i].courseContent[
+          j
+        ].subSection.reduce(
+          (acc, curr) => acc + parseInt(curr.timeDuration),
+          0
+        );
+
+        instructorDetail.courses[i].totalDuration = convertSecondsToDuration(
+          totalDurationInSeconds
+        );
+      }
+    }
+
+    res.status(200).json({
+      success: true,
+      data: instructorDetail.courses,
+    });
+  } catch (err) {
+    return res.status(500).json({
       success: false,
-      message: "Failed to get instructor Courses",
-      error: error.message,
+      message: "Failed to retrieve instructor courses",
+      err: err.message,
     });
   }
 };
@@ -516,7 +569,7 @@ exports.getFullCourseDetails = async (req, res) => {
 
     const totalDuration = convertSecondsToDuration(totalDurationInSeconds);
 
-    // console.log("duration",totalDuration)
+  
 
     return res.status(200).json({
       success: true,

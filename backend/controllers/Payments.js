@@ -102,7 +102,7 @@ exports.capturePayment = async(req, res) =>{
 exports.verifySignature = async(req, res)=>{
 
     try{
-        console.log("in the verifySignature")
+       
     const razorpay_order_id = req.body?.razorpay_order_id
     const razorpay_payment_id = req.body?.razorpay_payment_id
     const razorpay_signature = req.body?.razorpay_signature
@@ -139,15 +139,14 @@ if(expectedSignature === razorpay_signature){
         console.log("error in verify Signature")
         return res.status(200).json({
             success:"false",
-            messgae:"Payment failed - Signature in not matched"
+            message:"Payment failed - Signature in not matched"
         })
     }
 
 }
 
 exports.sendPaymentSuccessEmail = async(req, res) =>{
-    console.log("in the send Payment Success Email")
-
+    
   const {orderId, paymentId, amount} = req.body
 
   const userId = req.user.id
@@ -209,8 +208,7 @@ const enrollStudents = async(courses, userId, res)=>
                 })
             }
 
-            console.log("Updated course: ", enrolledCourse)
-
+           
 // add course progress 
             const courseProgress = await CourseProgress.create({
                 courseID:courseId,
@@ -227,7 +225,7 @@ const enrollStudents = async(courses, userId, res)=>
                 }},
                 {new:true}
              )
-             console.log("Enrolled student: ", enrolledStudent)
+           
 
             //  send mail to the studnet
             const emailResponse = await mailSender(enrolledStudent.email,

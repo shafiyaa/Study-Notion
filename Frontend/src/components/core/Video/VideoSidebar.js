@@ -20,7 +20,7 @@ const VideoSidebar = ({ setModal }) => {
   } = useSelector((state) => state.viewCourse)
 
   useEffect(() => {
-    console.log("completed lectures", completed)
+  
     const setActiveFlags = () => {
      
 
@@ -44,9 +44,7 @@ const VideoSidebar = ({ setModal }) => {
       setActiveSubSection(activeVideo)
 
       
-      // console.log("courseEntiredata", courseEntireData)
-      // console.log("total number of lectrues", totalNoOfLectures)
-      // console.log("course section data ", courseSectionData)
+      
 
 
 

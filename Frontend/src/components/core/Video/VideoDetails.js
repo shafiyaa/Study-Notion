@@ -31,9 +31,12 @@ const VideoDetails = () => {
       else {
         const filterData = courseSectionData.filter((data) => data._id === sectionId)
 
-        const filterVideoData = filterData?.[0].subSection.filter((data) => data._id === subSectionId)
+        const filterVideoData = filterData?.[0]?.subSection?.filter((data) => data._id === subSectionId)
         
-        setVideoData(filterVideoData[0])
+        if(filterVideoData){
+          setVideoData(filterVideoData[0])
+        }
+       
         setVideoEnded(false)
       }
     }

@@ -27,9 +27,9 @@ const ChangeProfilePicture = () => {
 
     const fileChangeHandler = (event) => {
         const file = event.target.files[0]
-        console.log("file :", file)
+        
         if (file) {
-            console.log("if k andatr")
+           
             setImageFile(file)
             previewFile(file)
 
@@ -41,11 +41,10 @@ const ChangeProfilePicture = () => {
 
         const reader = new FileReader()
         reader.readAsDataURL(file)
-        console.log("reader", reader)
+     
 
 
-        console.log("first")
-        console.log("reader ka result: ", reader.result)
+        
         reader.onloadend = () => {
             setPreviewSource(reader.result)
 
@@ -62,16 +61,16 @@ const ChangeProfilePicture = () => {
        
        
         try {
-            console.log("file is uploading...")
+            
             setLoading(true)
 
             const formData = new FormData()
             
-            console.log("Image file")
+            
 
             formData.append("displayPicture", imageFile)
 
-            console.log("form data:", formData)
+            
 
             dispatch(updateDisplayPicture(token, formData)).then(() => {
                 setLoading(false)

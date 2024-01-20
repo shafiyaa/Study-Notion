@@ -25,12 +25,9 @@ const UpdatePassword = () => {
   const submitPasswordForm = async (data) =>{
 
     try{
-      console.log("I am in Update password")
-      console.log("I am token : " , token);
-      console.log("I am Data : " , data);
+      
       dispatch(changePassword(token, data))
-      //  changePassword(token, data)
-
+      
     }catch(error){
       console.log("error while submit password form ", error.message)
     }

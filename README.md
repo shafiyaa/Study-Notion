@@ -1,31 +1,36 @@
-# React & Tailwind CSS Starter Pack
+Study-Notion - a comprehensive MERN stack project designed to revolutionize online education. This platform allows users to sign up as students, explore a variety of courses, make purchases, and empowers instructors to create and manage courses seamlessly.
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+Features
+User Authentication:
 
-## Usage
+Students can sign up, log in, and access personalized learning experiences.
+Instructors have dedicated accounts with additional features.
+Course Marketplace:
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+Browse a diverse catalog of courses.
+Purchase courses securely using integrated payment systems.
+Instructor Dashboard:
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+Instructors can create, manage, and publish courses.
+Track student enrollment and monitor course performance.
+Personalized Learning:
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+Adaptive learning paths for students based on their preferences.
+Progress tracking and analytics to measure individual achievements.
+Responsive Design:
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
+Enjoy a seamless experience on various devices, from desktop to mobile.
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
+Tech Stack
+Frontend:
+React.js for building interactive user interfaces.
 
-## Contributing
+Backend:
+Node.js and Express.js for server-side development.
+MongoDB for the database, storing user and course information.
 
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+Authentication:
+JWT (JSON Web Tokens) for secure user authentication.
+Payment Integration:
+
+Integrate a payment gateway for secure transactions.

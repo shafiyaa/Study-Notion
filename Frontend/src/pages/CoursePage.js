@@ -4,23 +4,22 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchCourseDetails } from '../services/operations/courseAPI'
 import avgRating from "../utilis/avgRating"
 import RatingStars from '../components/common/RatingStar'
-import { FiArrowDown } from "react-icons/fi"
+
 import { PiShareFatDuotone } from "react-icons/pi"
 import { toast } from "react-hot-toast"
 import { buyCourse } from '../services/operations/payment'
-import Error from "./Error"
+
 import ConfirmationalModal from "../components/common/ConfirmationModal"
 import { formatDate } from '../utilis/dateFormatter'
 import { PiGlobe } from "react-icons/pi"
-import { BsArrowRightShort } from "react-icons/bs"
+
 import copy from 'copy-to-clipboard';
 import { ACCOUNT_TYPE } from '../utilis/constants'
 import { addToCart } from '../reducers/slices/cartSlice'
 import { AiOutlineArrowDown } from "react-icons/ai"
-import { Link } from 'react-router-dom'
+
 import Accordian from '../components/core/Course/Accordian'
-// import { apiConnector } from '../services/apiConnector'
-// import { courseEndpoints } from '../services/apiLink'
+
 
 const CoursePage = () => {
     const [loading, setLoading] = useState(false)
@@ -41,11 +40,9 @@ const CoursePage = () => {
             setLoading(true)
             try {
                 const result = await fetchCourseDetails(courseId)
-                // console.log("printing the course response", result?.data)
-                console.log("result is ", result)
+               
                 setCoursePageData(result)
-                console.log("Instructions : ",  result?.data?.courseDetails?.instructions)
-
+               
             } catch (error) {
                 console.log("error in get Course Details in Course Page")
                 console.log(error)
@@ -88,7 +85,7 @@ const CoursePage = () => {
             toast.error("You are an Instructor, you can't buy a course")
         }
         else if (user && user?.accountType === ACCOUNT_TYPE.STUDENT) {
-            console.log("CourseDetal ke data ke andr : ", coursePageData?.data?.courseDetails)
+           
             dispatch(addToCart(coursePageData?.data?.courseDetails))
         } else {
             setModal({
