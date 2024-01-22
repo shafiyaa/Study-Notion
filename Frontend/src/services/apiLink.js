@@ -1,4 +1,5 @@
-const BASE_URL = `${window.location.origin}/api/v1`
+// const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL =`${window.location.origin}/api/v1`
 
 // Auth endpoint
 export const endpoints = {

@@ -34,3 +34,7 @@ JWT (JSON Web Tokens) for secure user authentication.
 Payment Integration:
 
 Integrate a payment gateway for secure transactions.
+
+
+
+

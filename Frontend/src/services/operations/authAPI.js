@@ -15,7 +15,8 @@ const { SENDOTP_API, SIGNUP_API, LOGIN_API, RESETPASSWORD_API, RESETPASSTOKEN_AP
 export function sendOtp(email, navigate) {
     return async (dispatch) => {
 
-        dispatch(setLoading(true))
+        // dispatch(setLoading(true))
+        const toastId = toast.loading("Loading...")
 
         try {
             const response = await apiConnector("POST", SENDOTP_API, {
@@ -37,7 +38,8 @@ export function sendOtp(email, navigate) {
             toast.error("Error in OTP Sending")
         }
 
-        dispatch(setLoading(false))
+        // dispatch(setLoading(false))
+        toast.dismiss(toastId)
 
     }
 }
@@ -86,6 +88,7 @@ export function login(email, password, navigate) {
     return async (dispatch) => {
 
         dispatch(setLoading(true))
+       
 
         try {
             const response = await apiConnector("POST", LOGIN_API, { email, password });
@@ -112,6 +115,7 @@ export function login(email, password, navigate) {
             toast.error("Login Failed")
         }
         dispatch(setLoading(false))
+       
 
     }
 }

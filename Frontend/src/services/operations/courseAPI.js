@@ -114,7 +114,7 @@ export const fetchCourseCategories = async () => {
 
 export const addCourseDetails = async (data, token) => {
   let result = null
-  const toastId = toast.loading("Loading...")
+  // const toastId = toast.loading("Loading...")
 
   try{
     const response = await apiConnector("POST",
@@ -138,7 +138,7 @@ export const addCourseDetails = async (data, token) => {
     toast.error(error.message)
   }
 
-  toast.dismiss(toastId)
+  // toast.dismiss(toastId)
   return result
 }
 

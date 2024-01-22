@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import { BsArrowLeft } from "react-icons/bs"
 import { PiClockCounterClockwiseBold } from "react-icons/pi"
 import CTAbutton from '../../components/core/HomePage/CTAbutton'
+import toast from 'react-hot-toast'
 
 const VerifyEmail = () => {
   const { loading, signupData } = useSelector((state) => state.auth)
@@ -18,13 +19,7 @@ const VerifyEmail = () => {
   const navigate = useNavigate()
 
 
-  // agr signup data empty hua toh 
-  // useEffect(() => {
-  //   if (!signupData) {
-  //     toast.error("You are not Signup yet!")
-  //     navigate("/signup")
-  //   }
-  // }, [])
+  
 
   function submitHandler(event) {
     
@@ -41,7 +36,7 @@ const VerifyEmail = () => {
     <div className='' >
       {
         loading ? (
-          <div className="grid place-items-center h-[70vh]">
+          <div className="flex justify-center items-center h-[100vh]">
             <div className='custom-loader'></div>
           </div>
         ) : (

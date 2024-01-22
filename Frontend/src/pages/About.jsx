@@ -14,7 +14,7 @@ import ReviewSection from '../components/core/HomePage/ReviewSection'
 
 
 const About = () => {
-  const [read, setRead] = useState(false)
+  const [read, setRead] = useState(true)
 
   return (
     <div className='text-white '>
@@ -52,7 +52,7 @@ const About = () => {
 
         <section className='border-t border-richblack-600 w-11/12 max-w-maxContent mx-auto'>
           {/* top boxes */}
-          <div className='flex flex-col lg:flex-row  items-center justify-evenly gap-10 mt-10 mb-10 border'>
+          <div className='flex flex-col lg:flex-row  items-center justify-evenly gap-10 mt-10 mb-10 '>
             {/* left */}
             <div className='lg:w-6/12 w-10/12 flex flex-col gap-y-8 text-richblack-300 p-8 '>
               <h1 className=' text-3xl font-semibold gradient bg-gradient-to-t from-[#fc5842] to-[#e70892] text-transparent bg-clip-text'>Our Founding Story</h1>
@@ -120,7 +120,7 @@ const About = () => {
         {/* section7 */}
 
 
-        <section className='my-10'>
+        <section className='my-10 w-11/12 mx-auto'>
           <p className='text-4xl text-richblack-100 font-semibold  text-center'>Reviews from other Learners</p>
           <ReviewSection></ReviewSection>
 

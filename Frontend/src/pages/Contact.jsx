@@ -62,7 +62,7 @@ const Contact = () => {
 
 
             {/* section 2 */}
-            <section className='my-10  py-8'>
+            <section className='my-10  py-8 w-11/12 mx-auto'>
             <p className='text-4xl text-richblack-100 font-semibold  text-center'>Review from other learners</p>
            
            <ReviewSection></ReviewSection>

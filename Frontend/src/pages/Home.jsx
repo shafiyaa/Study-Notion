@@ -17,9 +17,9 @@ import ExploreMore from '../components/core/HomePage/ExploreMore'
 export const Home = () => {
     
     return (
-        <div className='text-white'>
+        <div className='text-white '>
             {/* Section 1 */}
-            <div>
+            <div className='w-11/12 mx-auto'>
                 {/* button for signUp */}
                 <Link to={"/signup"}>
                     <div className=' group mx-auto mt-16 p-1 rounded-full bg-richblack-800 text-richblack-400 transition-all duration-200 hover:scale-95 w-fit  '
@@ -74,7 +74,7 @@ export const Home = () => {
 
 
                 {/* codeblock section 1 */}
-                <div className=' mt-16   mx-auto relative  px-6'>
+                <div className=' mt-16   mx-auto relative  px-6 lg:w-10/12 '>
 
 
                     <CodeBlocks
@@ -90,7 +90,7 @@ export const Home = () => {
                         subheading={"Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."}
                         ctabtn1={
                             {
-                                Text: "Try it Yourself",
+                                Text: "Try it",
                                 linkto: "/signup",
                                 active: true
                             }
@@ -120,7 +120,7 @@ export const Home = () => {
                 </div>
 
                 {/* codeBlock section 2 */}
-                <div className='mt-16  mx-auto relative px-6 '>
+                <div className='mt-16  mx-auto relative px-6 lg:w-10/12  '>
                   
                     <CodeBlocks
                         position={"lg:flex-row-reverse"}
@@ -134,7 +134,7 @@ export const Home = () => {
                         subheading={"Go ahead, give it a try. Our hands-on learning enviroment means you'll writing real code from your very first lesson."}
                         ctabtn1={
                             {
-                                Text: "Continue Lesson",
+                                Text: "Continue",
                                 linkto: "/signup",
                                 active: true
                             }
@@ -149,17 +149,7 @@ export const Home = () => {
                           // copy the text from figma/example file
                         codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
 
-                        // codeblock={`<!DOCTYPE html>
-                        // <head><title>Document</title></head>
-                        // <body>
-                        //     <h1> <a href="/">Header</a></h1>
-                        //     <nav>
-                        //        <a href="/one">one</a>
-                        //        <a href="/two">two</a>
-                        //        <a href="/three">three</a>
-                        //     </nav> 
-                        // </body>
-                        // </html>` }
+                       
                         codeColor={"text-yellow-25"}
                         backgroundGradient={<div className="codeblock2 absolute"></div>}
                     />
@@ -177,7 +167,7 @@ export const Home = () => {
             </div>
 
             {/* Section 2 */}
-            <div className='bg-pure-greys-5 text-richblack-5 md:pt-32 pt-10 px-5    '>
+            <div className='bg-pure-greys-5 text-richblack-5 md:pt-32 pt-10 px-5   '>
                 {/* checks background path */}
                 <div className='homepage_bg h-[310px] '>
                     <div className='w-11/12 max-w-maxContent flex flex-col items-center gap-4 max-auto'>

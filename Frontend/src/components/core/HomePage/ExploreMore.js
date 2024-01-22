@@ -43,10 +43,10 @@ const ExploreMore = () => {
             <div
               key={index}
               onClick={() => setCards(element)}
-              className={`sm:text-base text-[14px] w-full gap-2 sm:rounded-full  cursor-pointer transition-all duration-200 hover:bg-richblack-900 hover:text-blue-600 sm:py-2 sm:px-3 py-1 px-2  text-center
+              className={`sm:text-base text-[14px]   sm:rounded-full  cursor-pointer transition-all duration-200 hover:bg-richblack-900 hover:text-blue-600 sm:py-2 sm:px-3 py-1 px-2  text-center
                                ${
                                  currentTab === element
-                                   ? "bg-richblack-900 text-blue-100 font-medium"
+                                   ? "bg-richblack-900 text-blue-100  "
                                    : "text-richblack-600"
                                }
                             `}

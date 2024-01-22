@@ -95,7 +95,7 @@ const CourseBuilderForm = () => {
     <>
       {
         loading ? (
-          <div>
+          <div className='grid place-items-center h-[100vh]'>
             <div className='custom-loader'></div>
           </div>
         ) : (

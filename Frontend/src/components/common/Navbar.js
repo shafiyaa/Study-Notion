@@ -43,8 +43,10 @@ const Navbar = () => {
       setLoading(true)
       try {
         const res = await apiConnector("GET", categories.CATEGORIES_API)
-      
 
+        console.log("Ressult: " , res);
+      
+       console.log("SubLinks : " , res.data.data);
 
         setSubLinks(res.data.data)
       } catch (error) {
@@ -114,7 +116,7 @@ const Navbar = () => {
                                         key={i}
                                       >
                                         <div>
-                                          <p className='text-white  '>{subLink.name}</p>
+                                          <p className='text-white  '>{subLink?.name}</p>
                                           {/* <div className='w-fit h-[2px] hover:border-b hover:border-blue-100'></div> */}
                                         </div>
                                       </Link>
